@@ -564,3 +564,27 @@ function buyViaWhatsapp(productName) {
     window.open(url, '_blank');
 }
 window.buyViaWhatsapp = buyViaWhatsapp;
+
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const requirement = document.getElementById('requirement').value;
+
+    // Simulate successful submission
+    showToast(`Thank you ${name}! We have received your requirement.`, 'success');
+
+    // Construct WhatsApp message URL for immediate action (optional feature)
+    const text = encodeURIComponent(`*New Requirement*\nName: ${name}\nPhone: ${phone}\nRequirement: ${requirement}`);
+
+    // Reset form
+    document.getElementById('contactForm').reset();
+
+    // Optional: Open WhatsApp with the requirement
+    setTimeout(() => {
+        if (confirm("Would you like to send this requirement via WhatsApp as well?")) {
+            window.open(`https://wa.me/919548323302?text=${text}`, '_blank');
+        }
+    }, 1500);
+}
+window.handleContactSubmit = handleContactSubmit;
