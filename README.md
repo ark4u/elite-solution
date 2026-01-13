@@ -14,7 +14,7 @@ A modern, responsive e-commerce website for CCTV cameras and security solutions.
 - Google Fonts (Roboto, Noto Sans Devanagari)
 
 ## View Live
-Visit the site at: https://YOUR_USERNAME.github.io/elite-solution/
+Visit the site at: https://ark4u.github.io/elite-solution/
 
 ---
 © 2026 Elite Solution. All rights reserved.
