@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Elite Solution - Your trusted partner for CCTV cameras, security solutions, electronics, fashion, and more. Quality products with free shipping and 24/7 support.">
+        content="Elite Solution - Your trusted partner for CCTV cameras, security solutions, DVR, NVR, and Smart TVs. Quality products with free shipping and 24/7 support.">
     <meta name="keywords"
-        content="CCTV cameras, security cameras, DVR, NVR, security solutions, electronics, Elite Solution">
+        content="CCTV cameras, security cameras, DVR, NVR, IP cameras, PTZ cameras, security solutions, electronics, Elite Solution">
     <meta name="author" content="Elite Solution">
 
     <title>Elite Solution - CCTV Cameras & Security Solutions</title>
@@ -18,8 +18,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Stylesheet -->
@@ -28,31 +27,30 @@
 
 <body>
     <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header" id="header">
         <div class="header-container">
             <!-- Logo -->
-            <a href="#" class="logo" aria-label="Elite Solution Home">
-                <img src="assets/images/logo.png" alt="Elite Solution Logo" width="50" height="50">
-                <span class="logo-text">Elite Solution</span>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Elite Solution Logo">
+                <span class="logo-text">Elite <span>Solution</span></span>
             </a>
 
             <!-- Main Navigation -->
-            <nav class="nav" role="navigation" aria-label="Main navigation">
+            <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="#" class="nav-link active">Home</a></li>
-                    <li><a href="#products" class="nav-link">Shop</a></li>
-                    <li><a href="#collections" class="nav-link">Collections</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
-                    <li><a href="#footer" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
             <!-- Header Actions -->
             <div class="header-actions">
-                <form class="search-form" role="search" aria-label="Site search">
-                    <input type="search" class="search-input" placeholder="Search products..."
-                        aria-label="Search products">
-                    <button type="submit" class="search-btn" aria-label="Search">
+                <form class="search-form" role="search">
+                    <input type="search" class="search-input" placeholder="Search products...">
+                    <button type="submit" class="search-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -61,26 +59,8 @@
                     </button>
                 </form>
 
-                <button class="icon-btn" aria-label="Shopping cart">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    <span class="cart-count">0</span>
-                </button>
-
-                <a href="#" class="account-link" aria-label="Guest account">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </a>
-
                 <!-- Mobile Menu Toggle -->
-                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -90,13 +70,13 @@
     </header>
 
     <!-- Mobile Menu -->
-    <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <nav class="mobile-menu" id="mobileMenu">
         <ul class="nav-list">
-            <li><a href="#" class="nav-link active">Home</a></li>
-            <li><a href="#products" class="nav-link">Shop</a></li>
-            <li><a href="#collections" class="nav-link">Collections</a></li>
-            <li><a href="#blog" class="nav-link">Blog</a></li>
-            <li><a href="#footer" class="nav-link">Contact</a></li>
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="#categories" class="nav-link">Categories</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
@@ -104,17 +84,17 @@
     <main>
         <!-- Hero Slider Section -->
         <section class="hero" aria-label="Featured promotions">
-            <div class="slider">
+            <div class="slider" id="heroSlider">
                 <div class="slides-container">
                     <!-- Slide 1 -->
                     <div class="slide"
                         style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1920&h=800&fit=crop');">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <h1 class="slide-title">Best CCTV Cameras</h1>
-                            <p class="slide-description">Wide range of quality CCTV Cameras and Security Solutions for
-                                Home and Office. Trust Elite Solution for your safety.</p>
-                            <a href="#products" class="btn btn-primary">Shop Now</a>
+                            <h1 class="slide-title">Premium CCTV Solutions</h1>
+                            <p class="slide-description">Wide range of high-quality CCTV Cameras and Security Solutions
+                                for Home and Business. Trust Elite Solution for complete security.</p>
+                            <a href="shop.html" class="btn btn-primary">Shop Now</a>
                         </div>
                     </div>
 
@@ -123,10 +103,10 @@
                         style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1920&h=800&fit=crop');">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <h1 class="slide-title">Complete Security Solutions</h1>
+                            <h1 class="slide-title">Complete Security Systems</h1>
                             <p class="slide-description">From DVRs to NVRs, we provide end-to-end security
                                 infrastructure for businesses and homes across India.</p>
-                            <a href="#products" class="btn btn-primary">Explore Products</a>
+                            <a href="categories/dvr-systems.html" class="btn btn-primary">Explore DVR Systems</a>
                         </div>
                     </div>
 
@@ -138,26 +118,26 @@
                             <h1 class="slide-title">New Year Sale - Up to 40% Off</h1>
                             <p class="slide-description">Start 2026 with enhanced security. Special discounts on all
                                 security camera packages this January!</p>
-                            <a href="#products" class="btn btn-accent">Grab the Deal</a>
+                            <a href="shop.html" class="btn btn-accent">Grab the Deal</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slider Navigation -->
-                <div class="slider-nav" role="tablist" aria-label="Slider navigation">
-                    <button class="slider-dot active" aria-label="Slide 1" aria-selected="true"></button>
-                    <button class="slider-dot" aria-label="Slide 2" aria-selected="false"></button>
-                    <button class="slider-dot" aria-label="Slide 3" aria-selected="false"></button>
+                <div class="slider-nav" id="sliderNav">
+                    <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
                 </div>
 
                 <!-- Slider Arrows -->
-                <button class="slider-arrow slider-arrow--prev" aria-label="Previous slide">
+                <button class="slider-arrow slider-arrow--prev" id="prevSlide" aria-label="Previous slide">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
-                <button class="slider-arrow slider-arrow--next" aria-label="Next slide">
+                <button class="slider-arrow slider-arrow--next" id="nextSlide" aria-label="Next slide">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
@@ -167,7 +147,7 @@
         </section>
 
         <!-- Trust Badges Section -->
-        <section class="trust-badges" aria-label="Our guarantees">
+        <section class="trust-badges">
             <div class="container">
                 <div class="badges-grid">
                     <div class="badge-item">
@@ -188,7 +168,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3v5l4.25 2.52.77-1.28-3.52-2.09V5z" />
-                                <path d="M12 4V2C6.48 2 2 6.48 2 12h2c0-4.41 3.59-8 8-8z" />
                             </svg>
                         </div>
                         <div class="badge-content">
@@ -226,779 +205,237 @@
             </div>
         </section>
 
-        <!-- Analog Cameras Section -->
-        <section id="analog-cameras" class="products section" aria-labelledby="analog-title">
+        <!-- Categories Section -->
+        <section id="categories" class="section">
             <div class="container">
-                <h2 id="analog-title" class="section-title">📷 Analog Cameras</h2>
-                <div class="products-grid">
-                    <!-- 2.5 MP Dome Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Best Seller</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg"
-                                alt="2.5 MP Dome Analog Camera" loading="lazy">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <a href="categories/analog-cameras.html" class="category-card">
+                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg" alt="Analog Cameras">
+                        <div class="category-overlay">
+                            <span class="category-icon">📷</span>
+                            <h3 class="category-title">Analog Cameras</h3>
+                            <span class="category-count">6 Products</span>
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">2.5 MP Dome Analog</h3>
-                            <p class="product-desc">ES-UNC-DA4CH-ZA1 • IR Night Vision • Indoor/Outdoor • Weatherproof
-                            </p>
+                    </a>
 
+                    <a href="categories/ip-cameras.html" class="category-card">
+                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg" alt="IP Cameras">
+                        <div class="category-overlay">
+                            <span class="category-icon">🌐</span>
+                            <h3 class="category-title">IP Cameras</h3>
+                            <span class="category-count">7 Products</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- 2.5 MP Bullet Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Popular</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.25.jpeg"
-                                alt="2.5 MP Bullet Analog Camera" loading="lazy">
+                    <a href="categories/ptz-wifi.html" class="category-card">
+                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg" alt="PTZ & WiFi Cameras">
+                        <div class="category-overlay">
+                            <span class="category-icon">🎥</span>
+                            <h3 class="category-title">PTZ & WiFi</h3>
+                            <span class="category-count">5 Products</span>
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">2.5 MP Bullet Analog</h3>
-                            <p class="product-desc">ES-UNC-BA4CH-QB1 • IR Night Vision • Metal Body • Weatherproof</p>
+                    </a>
 
+                    <a href="categories/dvr-systems.html" class="category-card">
+                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg" alt="DVR Systems">
+                        <div class="category-overlay">
+                            <span class="category-icon">📼</span>
+                            <h3 class="category-title">DVR Systems</h3>
+                            <span class="category-count">4 Products</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- 5 MP Dome Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">5MP HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.39.jpeg"
-                                alt="5 MP Dome Analog Camera" loading="lazy">
+                    <a href="categories/poe-switches.html" class="category-card">
+                        <img src="assets/images/poe-switch-8port.png" alt="POE Switches">
+                        <div class="category-overlay">
+                            <span class="category-icon">🔌</span>
+                            <h3 class="category-title">POE Switches</h3>
+                            <span class="category-count">3 Products</span>
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">5 MP Dome Analog</h3>
-                            <p class="product-desc">ES-UNC-DA5MP-ZA5 • Day/Night Vision • IP65 Rated • DWDR</p>
+                    </a>
 
+                    <a href="categories/smart-tv.html" class="category-card">
+                        <img src="assets/images/tv-43-qled-main.jpg" alt="Smart TV">
+                        <div class="category-overlay">
+                            <span class="category-icon">📺</span>
+                            <h3 class="category-title">Smart TV</h3>
+                            <span class="category-count">1 Product</span>
                         </div>
-                    </article>
-
-                    <!-- 5 MP Bullet Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">5MP HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg"
-                                alt="5 MP Bullet Analog Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">5 MP Bullet Analog</h3>
-                            <p class="product-desc">ES-UNC-BA5MP-QA5 • Day/Night Vision • IP65 Rated • DWDR</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 8 MP Bullet Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8MP Ultra HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.21.jpeg"
-                                alt="8 MP Bullet Analog Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">8 MP Bullet Analog</h3>
-                            <p class="product-desc">ES-UNC-BA8MP-QA8 • Long Range IR • Metal Body • Weatherproof</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 8 MP Dome Analog -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8MP Ultra HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.38.jpeg"
-                                alt="8 MP Dome Analog Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">8 MP Dome Analog</h3>
-                            <p class="product-desc">ES-UNC-DA8MP-ZA8 • IR Night Vision • Indoor Use • Wide Angle</p>
-
-                        </div>
-                    </article>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- IP Cameras Section -->
-        <section id="ip-cameras" class="products section" style="background: var(--color-bg-alt);"
-            aria-labelledby="ip-title">
+        <!-- Popular Products Section -->
+        <section class="popular-products section">
             <div class="container">
-                <h2 id="ip-title" class="section-title">🌐 IP Cameras</h2>
-                <div class="products-grid">
-                    <!-- 8 MP Bullet IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8MP Ultra HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg"
-                                alt="8 MP Bullet IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">8 MP Bullet IP</h3>
-                            <p class="product-desc">ES-LNC-BI8MP-QI08 • PoE Enabled • LED Lights • H.265</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 8 MP Dome IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8MP Ultra HD</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.15.jpeg"
-                                alt="8 MP Dome IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">8 MP Dome IP</h3>
-                            <p class="product-desc">ES-LNC-DI8MP-ZI08 • Built-in Speaker • 4 LED Lights • Indoor</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 5 MP Bullet IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Smart Color</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.08.jpeg"
-                                alt="5 MP Bullet IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">5 MP Bullet IP</h3>
-                            <p class="product-desc">ES-LNC-BI5MP-QI05 • Smart Color Night • IR 30M • H.265</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 5 MP Dome IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Smart Color</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.26.jpeg"
-                                alt="5 MP Dome IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">5 MP Dome IP</h3>
-                            <p class="product-desc">ES-LNC-DI5MP-ZI05 • Smart Color Night • IR 30M • H.265</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 2.5 MP Bullet IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.13.jpeg"
-                                alt="2.5 MP Bullet IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">2.5 MP Bullet IP</h3>
-                            <p class="product-desc">ES-LNC-BI2MP-QI02 • PoE Enabled • IR Night Vision • H.265</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 2.5 MP Dome IP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.01.jpeg"
-                                alt="2.5 MP Dome IP Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">2.5 MP Dome IP</h3>
-                            <p class="product-desc">ES-LNC-DI2MP-ZI02 • IR Night Vision • Indoor Use • H.265</p>
-
-                        </div>
-                    </article>
-
-                    <!-- SecureBullet Pro -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">WiFi</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.26.jpeg"
-                                alt="SecureBullet Pro Camera" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">SecureBullet Pro</h3>
-                            <p class="product-desc">ES-CV240 • Dual Antenna WiFi • 4 LED Lights • Metal Body</p>
-
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- PTZ & WiFi Cameras Section -->
-        <section id="ptz-wifi" class="products section" aria-labelledby="ptz-title">
-            <div class="container">
-                <h2 id="ptz-title" class="section-title">🎥 PTZ & WiFi Cameras</h2>
-                <div class="products-grid">
-                    <!-- Elite PTZ 5 MP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">30X Zoom</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg"
-                                alt="Elite PTZ Camera 5 MP" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite PTZ 5 MP</h3>
-                            <p class="product-desc">ES-PTZ8990-05MP • 30X Zoom • 360° Rotation • Day/Night Vision</p>
-
-                        </div>
-                    </article>
-
-                    <!-- Elite PTZ 8 MP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Professional</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg"
-                                alt="Elite PTZ Camera 8 MP" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite PTZ 8 MP</h3>
-                            <p class="product-desc">ES-PTZ287531-G008MP • Wall Mount • 360° Rotation • Professional</p>
-
-                        </div>
-                    </article>
-
-                    <!-- Elite WiFi Dome 3 MP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Indoor</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 20.03.27.jpeg"
-                                alt="Elite WiFi Dome 3 MP" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite WiFi Dome 3 MP</h3>
-                            <p class="product-desc">ES-IPC360 • WiFi Enabled • Pan & Tilt • Two-Way Audio</p>
-
-                        </div>
-                    </article>
-
-                    <!-- Smart PTZ Bullet 5 MP -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Outdoor</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.21.jpeg"
-                                alt="Smart PTZ Bullet 5 MP" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Smart PTZ Bullet 5 MP</h3>
-                            <p class="product-desc">ES-GX200-SV4G • Dual Antenna • Outdoor Use • Smart Detection</p>
-
-                        </div>
-                    </article>
-
-                    <!-- Guard Pro PTZ 2-Way -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">2-Way Audio</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.25.jpeg"
-                                alt="Guard Pro PTZ 2-Way" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Guard Pro PTZ 2-Way</h3>
-                            <p class="product-desc">ES-PTZ-SG500 • 2-Way Communication • Smart Alerts • Night Vision</p>
-
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- DVR Systems Section -->
-        <section id="products" class="products section" style="background: var(--color-bg-alt);"
-            aria-labelledby="dvr-title">
-            <div class="container">
-                <h2 id="dvr-title" class="section-title">📼 DVR Systems</h2>
-                <div class="products-grid">
-                    <!-- 4 Channel DVR -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">4 Channel</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.49.45.jpeg"
-                                alt="Elite 4 Channel DVR" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 4 Channel DVR</h3>
-                            <p class="product-desc">ES-UVR-004CH-ZQS • H.265+ • Mobile App • 1 SATA Port</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 8 Channel DVR -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8 Channel</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg"
-                                alt="Elite 8 Channel DVR" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 8 Channel DVR</h3>
-                            <p class="product-desc">ES-UVR-008CH-ZQS01 • H.265+ • USB Backup • 2 SATA Ports</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 16 Channel DVR -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">16 Channel</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg"
-                                alt="Elite 16 Channel DVR" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 16 Channel DVR</h3>
-                            <p class="product-desc">ES-UVR-0016CH-ZQS02 • H.265+ • HDMI Output • 4 SATA Ports</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 32 Channel DVR -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">32 Channel</span>
-                            <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg"
-                                alt="Elite 32 Channel DVR" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 32 Channel DVR</h3>
-                            <p class="product-desc">ES-UVR-0032CH-ZQS03 • H.265+ • RAID Support • 8 SATA Ports</p>
-
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- POE Switches Section -->
-        <section id="poe-switches" class="products section" aria-labelledby="poe-title">
-            <div class="container">
-                <h2 id="poe-title" class="section-title">🔌 POE Switches</h2>
-                <div class="products-grid">
-                    <!-- 4 Port POE -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">4 Port</span>
-                            <img src="assets/images/poe-switch-4port.png" alt="Elite 4 Port POE Switch" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 4 Port POE</h3>
-                            <p class="product-desc">ES-POE3690LIP04 • 60W Total • Gigabit • Plug & Play</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 8 Port POE -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">8 Port</span>
-                            <img src="assets/images/poe-switch-8port.png" alt="Elite 8 Port POE Switch" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 8 Port POE</h3>
-                            <p class="product-desc">ES-POE2580LIP08 • 120W Total • Gigabit • 2 Uplinks</p>
-
-                        </div>
-                    </article>
-
-                    <!-- 16 Port POE -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">16 Port</span>
-                            <img src="assets/images/poe-switch-16port.png" alt="Elite 16 Port POE Switch"
-                                loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 16 Port POE</h3>
-                            <p class="product-desc">ES-POE1470LIP016 • 250W Total • Rack Mount • Gigabit</p>
-
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Smart TV Section -->
-        <section id="smart-tv" class="products section" style="background: var(--color-bg-alt);"
-            aria-labelledby="tv-title">
-            <div class="container">
-                <h2 id="tv-title" class="section-title">📺 Smart TV</h2>
-                <div class="products-grid">
-                    <!-- Elite 43" QLED -->
-                    <article class="product-card" style="grid-column: span 2;">
-                        <div class="product-image">
-                            <span class="product-badge">New Arrival</span>
-                            <img src="assets/images/tv-43-qled-main.jpg" alt="Elite 43 OptimaX QLED Smart TV"
-                                loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Elite 43" OptimaX QLED</h3>
-                            <p class="product-desc">ES-TV43-QLED-OX • 43" QLED Display • Android TV • Quad Core • Smart
-                                Remote with OTT Keys</p>
-
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Featured Collections Section -->
-        <section id="collections" class="collections section" aria-labelledby="collections-title">
-            <div class="container">
-                <h2 id="collections-title" class="section-title">Featured Collections</h2>
-
-                <div class="collections-grid">
-                    <article class="collection-card">
-                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg"
-                            alt="Analog Cameras Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">📷 Analog Cameras</h3>
-                            <a href="#analog-cameras" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg"
-                            alt="IP Cameras Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">🌐 IP Cameras</h3>
-                            <a href="#ip-cameras" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg"
-                            alt="PTZ Cameras Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">🎥 PTZ & WiFi</h3>
-                            <a href="#ptz-wifi" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <img src="assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg"
-                            alt="DVR Systems Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">📼 DVR Systems</h3>
-                            <a href="#products" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <img src="assets/images/poe-switch-8port.png" alt="POE Switches Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">🔌 POE Switches</h3>
-                            <a href="#poe-switches" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <img src="assets/images/tv-43-qled-main.jpg" alt="Smart TV Collection" loading="lazy">
-                        <div class="collection-overlay">
-                            <h3 class="collection-title">📺 Smart TV</h3>
-                            <a href="#smart-tv" class="btn btn-primary">Shop Now</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Promo Banners Section -->
-        <section class="promo-banners section" aria-label="Promotional offers">
-            <div class="container">
-                <div class="promo-grid">
-                    <div class="promo-banner">
-                        <span class="promo-label">Limited Time</span>
-                        <h3 class="promo-title">Latest Deals<br>Up to 40% Off</h3>
-                        <a href="#products" class="btn">Shop Now</a>
-                        <div class="promo-decoration"></div>
-                    </div>
-
-                    <div class="promo-banner promo-banner--accent">
-                        <span class="promo-label">New Arrivals</span>
-                        <h3 class="promo-title">New Collection<br>Big Sale</h3>
-                        <a href="#products" class="btn">Explore</a>
-                        <div class="promo-decoration"></div>
+                <h2 class="section-title">Popular Products</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="popularCarousel">
+                        <!-- Products will be loaded dynamically -->
                     </div>
                 </div>
-
-                <!-- Category Quick Links -->
-                <div class="category-links">
-                    <a href="#products" class="category-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="carouselPrev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
-                        <span>CCTV Cameras</span>
-                    </a>
-                    <a href="#products" class="category-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zM5 10h14v2H5z" />
+                    </button>
+                    <button class="carousel-btn" id="carouselNext">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        <span>DVR / NVR</span>
-                    </a>
-                    <a href="#products" class="category-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z" />
-                        </svg>
-                        <span>Televisions</span>
-                    </a>
-                    <a href="#products" class="category-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h2v2H6zm4-4h8v2h-8zm0 4h5v2h-5z" />
-                        </svg>
-                        <span>Electronics</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Latest News/Blog Section -->
-        <section id="blog" class="blog section" aria-labelledby="blog-title">
+        <!-- Featured Products Section -->
+        <section class="section" style="background: var(--color-bg-alt);">
             <div class="container">
-                <h2 id="blog-title" class="section-title">Latest News</h2>
-
-                <div class="blog-grid">
-                    <!-- Blog Post 1 -->
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=250&fit=crop"
-                                alt="Security camera installation" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Jan 10, 2026</span>
-                                <span>Admin</span>
-                            </div>
-                            <h3 class="blog-title">Why You Don't Need Professional Security Camera Installation</h3>
-                            <p class="blog-excerpt">Learn how to install your security cameras like a pro. Our
-                                comprehensive guide walks you through every step of the process.</p>
-                            <a href="#" class="blog-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post 2 -->
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400&h=250&fit=crop"
-                                alt="Different types of security cameras" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Jan 8, 2026</span>
-                                <span>Admin</span>
-                            </div>
-                            <h3 class="blog-title">Different Types of Security Cameras and When to Use Them</h3>
-                            <p class="blog-excerpt">Explore the various types of security cameras available and find the
-                                perfect match for your home or business needs.</p>
-                            <a href="#" class="blog-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post 3 (Hindi) -->
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=250&fit=crop"
-                                alt="Modern CCTV systems in India" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Jan 5, 2026</span>
-                                <span>Admin</span>
-                            </div>
-                            <h3 class="blog-title hindi" lang="hi">आधुनिक सीसीटीवी सिस्टम से भारत को सुरक्षित बना रहा है
-                            </h3>
-                            <p class="blog-excerpt hindi" lang="hi">जानिए कैसे आधुनिक सीसीटीवी तकनीक भारत में सुरक्षा को
-                                बेहतर बना रही है। Elite Solution के साथ अपने घर और व्यापार को सुरक्षित करें।</p>
-                            <a href="#" class="blog-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Products will be loaded dynamically -->
                 </div>
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <a href="shop.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
 
-                <!-- Pagination -->
-                <nav class="pagination" aria-label="Blog pagination">
-                    <button class="page-btn active" aria-label="Page 1" aria-current="page">1</button>
-                    <button class="page-btn" aria-label="Page 2">2</button>
-                    <button class="page-btn" aria-label="Page 3">3</button>
-                    <button class="page-btn" aria-label="Page 4">4</button>
-                    <button class="page-btn" aria-label="Page 5">5</button>
-                    <button class="page-btn" aria-label="Page 6">6</button>
-                    <button class="page-btn" aria-label="Page 7">7</button>
-                    <button class="page-btn" aria-label="Page 8">8</button>
-                    <button class="page-btn" aria-label="Page 9">9</button>
-                </nav>
+        <!-- Promo Banners -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
+                    <div
+                        style="background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark)); padding: var(--space-2xl); border-radius: var(--radius-xl); color: white; position: relative; overflow: hidden;">
+                        <span
+                            style="display: inline-block; background: rgba(255,255,255,0.2); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">Limited
+                            Time</span>
+                        <h3 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-md);">Latest Deals<br>Up
+                            to 40% Off</h3>
+                        <a href="shop.html" class="btn"
+                            style="background: white; color: var(--color-secondary);">Shop Now</a>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark)); padding: var(--space-2xl); border-radius: var(--radius-xl); color: white; position: relative; overflow: hidden;">
+                        <span
+                            style="display: inline-block; background: rgba(255,255,255,0.2); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">New
+                            Arrivals</span>
+                        <h3 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-md);">New
+                            Collection<br>Big Sale</h3>
+                        <a href="shop.html" class="btn" style="background: white; color: var(--color-accent);">Explore</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Fixed Contact Buttons -->
-    <div class="fixed-contact-buttons">
-        <!-- Call Button - Bottom Left -->
-        <a href="tel:+919548323302" class="fixed-btn fixed-btn-call" aria-label="Call us">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-            </svg>
-            <span class="fixed-btn-label">Call Now</span>
-        </a>
-
-        <!-- WhatsApp Button - Bottom Right -->
-        <a href="https://wa.me/919548323302?text=Hi%20Elite%20Solution!%20I%20am%20interested%20in%20your%20products."
-            target="_blank" class="fixed-btn fixed-btn-whatsapp" aria-label="WhatsApp us">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-            <span class="fixed-btn-label">WhatsApp</span>
-        </a>
-    </div>
-
     <!-- Footer -->
-    <footer id="footer" class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- About Column -->
                 <div class="footer-about">
-                    <a href="#" class="logo">
+                    <a href="index.html" class="logo">
                         <img src="assets/images/logo.png" alt="Elite Solution Logo">
+                        <span class="logo-text">Elite <span>Solution</span></span>
                     </a>
-                    <p>Elite Solution is your trusted partner for CCTV cameras, security solutions, electronics, and
-                        more. We provide quality products with excellent customer service across India.</p>
-                </div>
-
-                <!-- Products Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="#products">CCTV Cameras</a></li>
-                        <li><a href="#products">DVR Systems</a></li>
-                        <li><a href="#products">NVR Systems</a></li>
-                        <li><a href="#products">Smart TVs</a></li>
-                        <li><a href="#collections">Fashion</a></li>
-                        <li><a href="#collections">Electronics</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns & Exchange</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Track Order</a></li>
-                    </ul>
-                </div>
-
-                <!-- Connect Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="tel:+919548323302" style="display: flex; align-items: center; gap: 0.5rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-                                </svg>
-                                Call: +91 95483 23302
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://wa.me/919548323302" target="_blank"
-                                style="display: flex; align-items: center; gap: 0.5rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                                </svg>
-                                WhatsApp
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:elitesolutions906@gmail.com"
-                                style="display: flex; align-items: center; gap: 0.5rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                                </svg>
-                                Email Us
-                            </a>
-                        </li>
-                    </ul>
-
-                    <!-- Social Links -->
+                    <p>Elite Solution is your trusted partner for CCTV cameras, security solutions, DVR, NVR, and Smart
+                        TVs. Quality products with 24/7 support.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://wa.me/919548323302" class="social-link" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
                                 <path
-                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                             </svg>
                         </a>
                         <a href="mailto:elitesolutions906@gmail.com" class="social-link" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
                         </a>
                     </div>
                 </div>
+
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categories/analog-cameras.html">Analog Cameras</a></li>
+                        <li><a href="categories/ip-cameras.html">IP Cameras</a></li>
+                        <li><a href="categories/ptz-wifi.html">PTZ & WiFi</a></li>
+                        <li><a href="categories/dvr-systems.html">DVR Systems</a></li>
+                        <li><a href="categories/poe-switches.html">POE Switches</a></li>
+                        <li><a href="categories/smart-tv.html">Smart TV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                        </svg>
+                        <span>+91 95483 23302</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <span>elitesolutions906@gmail.com</span>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Subscribe to newsletter">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
             </div>
 
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="copyright">© 2026 Elite Solution. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <p>&copy; 2026 Elite Solution. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Floating Buttons -->
+    <div class="floating-buttons floating-whatsapp">
+        <a href="https://wa.me/919548323302" class="float-btn whatsapp" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="floating-buttons floating-call">
+        <a href="tel:+919548323302" class="float-btn call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+            </svg>
+            <span>Call Us</span>
+        </a>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
