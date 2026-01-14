@@ -23,11 +23,11 @@
     --color-accent: #FD7E14;
     --color-accent-dark: #e56a00;
     --color-border: #E0E0E0;
-    
+
     /* Typography */
     --font-primary: 'Roboto', sans-serif;
     --font-hindi: 'Noto Sans Devanagari', 'Roboto', sans-serif;
-    
+
     /* Font Sizes */
     --fs-h1: 2.5rem;
     --fs-h2: 2rem;
@@ -36,7 +36,7 @@
     --fs-body: 1rem;
     --fs-small: 0.875rem;
     --fs-xs: 0.75rem;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -45,21 +45,21 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
-    
+
     /* Layout */
     --max-width: 1200px;
     --header-height: 60px;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
+
     /* Border Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
@@ -70,7 +70,9 @@
 /* ===================================
    CSS Reset & Base Styles
    =================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -91,20 +93,37 @@ body {
 }
 
 /* Hindi Text Support */
-.hindi, [lang="hi"] {
+.hindi,
+[lang="hi"] {
     font-family: var(--font-hindi);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
 }
 
-h1 { font-size: var(--fs-h1); }
-h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
-h4 { font-size: var(--fs-h4); }
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
 
 p {
     margin-bottom: var(--spacing-md);
@@ -126,7 +145,8 @@ img {
     display: block;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -137,7 +157,8 @@ button {
     background: none;
 }
 
-input, textarea {
+input,
+textarea {
     font-family: inherit;
     font-size: inherit;
 }
@@ -207,10 +228,21 @@ input, textarea {
     color: var(--color-white);
 }
 
-.text-center { text-align: center; }
-.text-primary { color: var(--color-primary); }
-.text-success { color: var(--color-success); }
-.text-accent { color: var(--color-accent); }
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
 
 .btn-whatsapp {
     background-color: #25D366;
@@ -1086,8 +1118,15 @@ input, textarea {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .chat-btn {
@@ -1302,7 +1341,7 @@ input, textarea {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1314,78 +1353,78 @@ input, textarea {
         --fs-h2: 1.5rem;
         --fs-h3: 1.25rem;
     }
-    
+
     /* Header */
     .nav {
         display: none;
     }
-    
+
     .menu-toggle {
         display: flex;
     }
-    
+
     .search-form {
         display: none;
     }
-    
+
     /* Hero */
     .hero {
         height: 400px;
     }
-    
+
     .slider-arrow {
         width: 40px;
         height: 40px;
     }
-    
+
     .slider-arrow--prev {
         left: var(--spacing-sm);
     }
-    
+
     .slider-arrow--next {
         right: var(--spacing-sm);
     }
-    
+
     /* Trust Badges */
     .badges-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     /* Products */
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .tabs {
         gap: var(--spacing-xs);
     }
-    
+
     .tab-btn {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: var(--fs-small);
     }
-    
+
     /* Collections */
     .collections-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     /* Promo Banners */
     .promo-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* Blog */
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     /* Footer */
     .footer-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: var(--spacing-md);
@@ -1398,88 +1437,88 @@ input, textarea {
     .container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .section {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     /* Hero */
     .hero {
         height: auto;
         min-height: 350px;
     }
-    
+
     .slide-content {
         padding: var(--spacing-md);
     }
-    
+
     /* Trust Badges */
     .badges-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .badge-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     /* Products */
     .products-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: var(--spacing-sm);
         justify-content: flex-start;
     }
-    
+
     .tab-btn {
         white-space: nowrap;
     }
-    
+
     /* Collections */
     .collections-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .collection-card {
         height: 250px;
     }
-    
+
     /* Blog */
     .blog-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* Category Links */
     .category-links {
         gap: var(--spacing-sm);
     }
-    
+
     .category-link {
         min-width: 100px;
         padding: var(--spacing-sm);
     }
-    
+
     /* Chat Button */
     .chat-support {
         bottom: var(--spacing-md);
         right: var(--spacing-md);
     }
-    
+
     .chat-btn {
         width: 50px;
         height: 50px;
     }
-    
+
     /* Pagination */
     .pagination {
         flex-wrap: wrap;
     }
-    
+
     .page-btn {
         width: 35px;
         height: 35px;
@@ -1491,15 +1530,21 @@ input, textarea {
    Animations
    =================================== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
-    from { 
+    from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1523,6 +1568,123 @@ input, textarea {
 }
 
 @keyframes shimmer {
-    0% { background-position: -600px 0; }
-    100% { background-position: 600px 0; }
+    0% {
+        background-position: -600px 0;
+    }
+
+    100% {
+        background-position: 600px 0;
+    }
+}
+
+/* ===================================
+   Fixed Contact Buttons
+   =================================== */
+.fixed-contact-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.fixed-btn {
+    position: fixed;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.fixed-btn svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.fixed-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Call Button - Bottom Left */
+.fixed-btn-call {
+    left: 24px;
+    background: linear-gradient(135deg, #0D47A1 0%, #1976D2 100%);
+}
+
+.fixed-btn-call:hover {
+    background: linear-gradient(135deg, #0a3d8f 0%, #1565C0 100%);
+    color: white;
+}
+
+/* WhatsApp Button - Bottom Right */
+.fixed-btn-whatsapp {
+    right: 24px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.fixed-btn-whatsapp:hover {
+    background: linear-gradient(135deg, #20c05c 0%, #0f7a6d 100%);
+    color: white;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.fixed-btn-whatsapp {
+    animation: pulse 2s infinite;
+}
+
+/* Mobile responsiveness for fixed buttons */
+@media (max-width: 768px) {
+    .fixed-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+        bottom: 16px;
+    }
+
+    .fixed-btn-call {
+        left: 16px;
+    }
+
+    .fixed-btn-whatsapp {
+        right: 16px;
+    }
+
+    .fixed-btn-label {
+        display: none;
+    }
+
+    .fixed-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .fixed-btn {
+        padding: 14px;
+        border-radius: 50%;
+    }
 }
