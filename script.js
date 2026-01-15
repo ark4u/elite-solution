@@ -147,16 +147,16 @@ const productsData = {
                 {
                     id: "32",
                     name: "32 Inch",
-                    image: "assets/images/smart-tv-32-front.jpg",
-                    images: ["assets/images/smart-tv-32-front.jpg"],
+                    image: "assets/images/smart-tv-48-front.jpg",
+                    images: ["assets/images/smart-tv-48-front.jpg"],
                     price: 8999,
                     mrp: 18999
                 },
                 {
                     id: "48",
                     name: "48 Inch",
-                    image: "assets/images/smart-tv-48-front.jpg",
-                    images: ["assets/images/smart-tv-48-front.jpg", "assets/images/smart-tv-48-persp.jpg"],
+                    image: "assets/images/smart-tv-32-front.jpg",
+                    images: ["assets/images/smart-tv-32-front.jpg", "assets/images/smart-tv-48-persp.jpg"],
                     price: 24999,
                     mrp: 45999
                 }
@@ -204,7 +204,7 @@ const productsData = {
             category: "ip",
             mrp: 3299,
             price: 2499,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.47.jpeg",
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
             features: ["5 MP HD", "Long Range IR", "Weatherproof", "H.265"],
             description: "Robust 5MP outdoor camera with high-performance IR LEDs for clear night vision.",
             badge: "5MP"
