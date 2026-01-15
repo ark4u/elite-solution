@@ -199,7 +199,21 @@ const products = [
         model: "ES-PTZ8990-05MP",
         category: "ptz-wifi",
         image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.37.49.jpeg",
-        description: "Heavy-duty 5MP Speed Dome PTZ.",
+        description: "Heavy-duty 5MP speed dome PTZ camera with 30X optical zoom for long-distance surveillance. Full 360° pan and high-speed tracking for comprehensive coverage.",
+        features: ["5 MP HD", "30X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 150M"],
+        specifications: "5 MP CMOS Sensor, 30X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 150M, PoE+ / DC 24V, IP66 Weatherproof, -40°C to +70°C",
+        categoryName: "PTZ & WiFi",
+        categorySlug: "ptz-wifi.html"
+    },
+    {
+        name: "Elite PTZ Camera 8 MP",
+        slug: "elite-ptz-8mp",
+        model: "ES-PTZ287531-G008MP",
+        category: "ptz-wifi",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg",
+        description: "Professional-grade 8MP (4K) PTZ camera with 25X optical zoom. Designed for large-scale installations requiring maximum detail and extended range.",
+        features: ["8 MP 4K Ultra-HD", "25X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 200M"],
+        specifications: "8 MP CMOS Sensor, 25X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 200M, PoE+ / DC 24V, IP67 Weatherproof, -40°C to +70°C",
         categoryName: "PTZ & WiFi",
         categorySlug: "ptz-wifi.html"
     },
