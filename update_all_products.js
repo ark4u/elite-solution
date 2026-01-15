@@ -1,0 +1,406 @@
+
+const fs = require('fs');
+const path = require('path');
+
+// FULL PRODUCT DATA (Synced with script.js)
+const products = [
+    // === SMART TV ===
+    {
+        name: "Elite Smart LED TV",
+        slug: "smart-led-tv",
+        model: "ES-TV-SMART-SERIES",
+        category: "smart-tv",
+        image: "assets/images/smart-tv-48-front.jpg",
+        description: "Our company is the most reputed manufacturer, exporter and supplier of 32 inch TV to customers...",
+        categoryName: "Smart TV",
+        categorySlug: "smart-tv.html"
+    },
+    // === IP CAMERAS ===
+    {
+        name: "2.5 MP Dome IP Camera",
+        slug: "2-5mp-dome-ip",
+        model: "ES-LNC-DI2MP-Z02",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg",
+        description: "Delivers clear high-definition video with stable network transmission.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "2.5 MP Bullet IP Camera",
+        slug: "2-5mp-bullet-ip",
+        model: "ES-LNC-BI2MP-QI02",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.19.jpeg",
+        description: "Durable outdoor bullet camera with sharp HD quality.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "5 MP Dome IP Camera",
+        slug: "5mp-dome-ip",
+        model: "ES-LNC-DI5MP-ZI05",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.33.jpeg",
+        description: "Ultra-clear 5MP HD video with enhanced detail.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "5 MP Bullet IP Camera",
+        slug: "5mp-bullet-ip",
+        model: "ES-LNC-BI5MP-QI05",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.47.jpeg",
+        description: "Robust 5MP outdoor camera with high-performance IR LEDs.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "8 MP Bullet IP Camera",
+        slug: "8mp-bullet-ip",
+        model: "ES-LNC-BI8MP-QI08",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.35.25.jpeg",
+        description: "Top-tier 4K surveillance with AI capabilities.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "8 MP Dome IP Camera",
+        slug: "8mp-dome-ip",
+        model: "ES-LNC-DI8MP-MI08",
+        category: "ip",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.35.40.jpeg",
+        description: "Discreet yet powerful 4K dome camera.",
+        categoryName: "IP Cameras",
+        categorySlug: "ip-cameras.html"
+    },
+    // === NVR SYSTEMS ===
+    {
+        name: "4 Channel NVR",
+        slug: "4-channel-nvr",
+        model: "ES-LNC-NVR04-PI04",
+        category: "ip",
+        image: "assets/images/nvr-4ch.png",
+        description: "Reliable 4-channel Network Video Recorder.",
+        categoryName: "IP Cameras", // NVRs usually grouped with IP or own cat. Using IP per script.js logic or separate? script.js grouped them under "ip" category ID mostly but let's check. 
+        // Actually in script.js I put category: "ip" for NVRs. But checking previous file.. they were distinct?
+        // Let's stick to "ip" for now or "dvr-systems" if they belong there? 
+        // User asked for "dvr systems" page previously. 
+        // Let's check categorySlug. "dvr-systems.html" is for DVR. 
+        // Is there an NVR page? "ip-cameras.html" works.
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "8 Channel NVR",
+        slug: "8-channel-nvr",
+        model: "ES-LNC-NVR08-PI08",
+        category: "ip",
+        image: "assets/images/nvr-8ch.png",
+        description: "High-performance 8-channel NVR.",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "16 Channel NVR",
+        slug: "16-channel-nvr",
+        model: "ES-LNC-NVR16-PI16",
+        category: "ip",
+        image: "assets/images/nvr-16ch.png",
+        description: "Professional 16-channel NVR.",
+        categorySlug: "ip-cameras.html"
+    },
+    {
+        name: "32 Channel NVR",
+        slug: "32-channel-nvr",
+        model: "ES-LNC-NVR32-PI32",
+        category: "ip",
+        image: "assets/images/nvr-32ch.png",
+        description: "Enterprise-grade 32-channel NVR.",
+        categorySlug: "ip-cameras.html"
+    },
+    // === POE SWITCHES ===
+    {
+        name: "Elite 4 Port POE Switch",
+        slug: "4-port-poe",
+        model: "ES-POE4SB-DI04",
+        category: "poe",
+        image: "assets/images/poe-switch-4port.png",
+        description: "Compact 4-Port PoE switch.",
+        categoryName: "POE Switches",
+        categorySlug: "poe-switches.html"
+    },
+    {
+        name: "Elite 8 Port POE Switch",
+        slug: "8-port-poe",
+        model: "ES-POE8SB-DI08",
+        category: "poe",
+        image: "assets/images/poe-switch-8port.png",
+        description: "8-Port PoE switch with Gigabit uplink.",
+        categoryName: "POE Switches",
+        categorySlug: "poe-switches.html"
+    },
+    {
+        name: "Elite 16 Port POE Switch",
+        slug: "16-port-poe",
+        model: "ES-POE16SB-DI16",
+        category: "poe",
+        image: "assets/images/poe-switch-16port.png",
+        description: "High-power 16-Port PoE switch.",
+        categoryName: "POE Switches",
+        categorySlug: "poe-switches.html"
+    },
+    // === PTZ & WIFI ===
+    {
+        name: "Elite Wifi DOME Camera 3 MP",
+        slug: "elite-wifi-dome-3mp",
+        model: "ES-IPC360",
+        category: "ptz-wifi",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg",
+        description: "Smart 3MP WiFi Dome camera with 360-degree panoramic view.",
+        categoryName: "PTZ & WiFi",
+        categorySlug: "ptz-wifi.html"
+    },
+    {
+        name: "ELITE SecureBullet Pro Camera",
+        slug: "securebullet-pro",
+        model: "ES-CV240",
+        category: "ptz-wifi",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.37.06.jpeg",
+        description: "Pro-grade 4MP WiFi Bullet camera.",
+        categoryName: "PTZ & WiFi",
+        categorySlug: "ptz-wifi.html"
+    },
+    {
+        name: "Bullet Outdoor Camera 5 MP",
+        slug: "smart-ptz-bullet-5mp",
+        model: "ES-GX200-5V4G",
+        category: "ptz-wifi",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.37.26.jpeg",
+        description: "Versatile 5MP Outdoor PTZ Bullet camera.",
+        categoryName: "PTZ & WiFi",
+        categorySlug: "ptz-wifi.html"
+    },
+    {
+        name: "ELITE ApexGuard PTZ 5MP",
+        slug: "elite-ptz-5mp",
+        model: "ES-PTZ8990-05MP",
+        category: "ptz-wifi",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.37.49.jpeg",
+        description: "Heavy-duty 5MP Speed Dome PTZ.",
+        categoryName: "PTZ & WiFi",
+        categorySlug: "ptz-wifi.html"
+    },
+    // === ANALOG CAMERAS (Existing - Keeping Logic) ===
+    {
+        name: "2.5 MP Dome Analog Camera",
+        slug: "2-5mp-dome-analog",
+        model: "ES-UNC-DA2MP-ZA1",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg",
+        description: "Delivers clear high-definition video with reliable day and night performance.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    {
+        name: "2.5 MP Bullet Analog Camera",
+        slug: "2-5mp-bullet-analog",
+        model: "ES-UNC-BA2MP-QA2",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.25.jpeg",
+        description: "Durable and reliable outdoor security solution.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    {
+        name: "5 MP Dome Analog Camera",
+        slug: "5mp-dome-analog",
+        model: "ES-UNC-DA5MP-ZA5",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.39.jpeg",
+        description: "Ultra-clear HD video with enhanced detail.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    {
+        name: "5 MP Bullet Analog Camera",
+        slug: "5mp-bullet-analog",
+        model: "ES-UNC-BA5MP-QA5",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
+        description: "Ideal for outdoor surveillance with excellent clarity.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    {
+        name: "8 MP Bullet Analog Camera",
+        slug: "8mp-bullet-analog",
+        model: "ES-LNC-BI8MP-QI08",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.21.jpeg",
+        description: "Engineered for high-resolution analog surveillance.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    {
+        name: "8 MP Dome Analog Camera",
+        slug: "8mp-dome-analog",
+        model: "ES-UNC-DA8MP-ZA8",
+        category: "analog",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.38.jpeg",
+        description: "High-precision surveillance with ultra-clear video.",
+        categoryName: "Analog Cameras",
+        categorySlug: "analog-cameras.html"
+    },
+    // === DVR SYSTEMS ===
+    {
+        name: "Elite 4 Channel DVR",
+        slug: "4-channel-dvr",
+        model: "ES-UVR-004CH-ZQS",
+        category: "dvr",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.49.45.jpeg",
+        description: "Reliable solution for small surveillance setups.",
+        categoryName: "DVR Systems",
+        categorySlug: "dvr-systems.html"
+    },
+    {
+        name: "Elite 8 Channel DVR",
+        slug: "8-channel-dvr",
+        model: "ES-UVR-008CH-ZQS01",
+        category: "dvr",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
+        description: "Designed for retail spaces and warehouses.",
+        categoryName: "DVR Systems",
+        categorySlug: "dvr-systems.html"
+    },
+    {
+        name: "Elite 16 Channel DVR",
+        slug: "16-channel-dvr",
+        model: "ES-UVR-0016CH-ZQS02",
+        category: "dvr",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
+        description: "High-capacity solution for large-scale installations.",
+        categoryName: "DVR Systems",
+        categorySlug: "dvr-systems.html"
+    },
+    {
+        name: "Elite 32 Channel DVR",
+        slug: "32-channel-dvr",
+        model: "ES-UVR-0032CH-ZQS03",
+        category: "dvr",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
+        description: "High-performance system for enterprise environments.",
+        categoryName: "DVR Systems",
+        categorySlug: "dvr-systems.html"
+    }
+];
+
+const template = (p) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${p.name} - Elite Solution</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Elite Solution Logo">
+                <span class="logo-text">Elite <span>Solution</span></span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <form class="search-form" role="search">
+                    <input type="search" class="search-input" placeholder="Search products...">
+                    <button type="submit" class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../shop.html" class="nav-link">Shop</a></li>
+            <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="product-page">
+        <div class="container">
+            <div id="productDetails" data-slug="${p.slug}">
+                <div class="product-page-grid">
+                    <div class="product-gallery">
+                         <div class="product-main-image">
+                            <img src="../${p.image}" alt="${p.name}">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                         <div class="product-breadcrumb">
+                            <a href="../index.html">Home</a>
+                            <span>/</span>
+                            <a href="../categories/${p.categorySlug}">${p.categoryName}</a>
+                            <span>/</span>
+                            <span>${p.name}</span>
+                        </div>
+                        <h1 class="product-page-title">${p.name}</h1>
+                        <p class="product-model">Model: ${p.model}</p>
+                        <p class="product-description-text">${p.description}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elite Solution.</p>
+            </div>
+        </div>
+    </footer>
+
+     <div class="floating-buttons floating-whatsapp">
+        <a href="https://wa.me/919548323302" class="float-btn whatsapp" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+    
+    <div class="floating-buttons floating-call">
+         <a href="tel:+919548323302" class="float-btn call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            <span>Call Us</span>
+        </a>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>`;
+
+products.forEach(p => {
+    const filePath = path.join(__dirname, 'products', `${p.slug}.html`);
+    fs.writeFileSync(filePath, template(p));
+    console.log(`Updated/Created ${p.slug}.html`);
+});

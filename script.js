@@ -129,85 +129,54 @@ const productsData = {
             features: ["8 MP Ultra HD", "Wall Mount", "360° Rotation", "Professional Grade"],
             badge: "Professional"
         },
+        // === SMART TV ===
         {
-            id: 9,
-            name: "Elite WiFi Dome Camera 3 MP",
-            slug: "elite-wifi-dome-3mp",
-            model: "ES-IPC360",
-            category: "ptz-wifi",
-            mrp: 3999,
-            price: 2999,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 20.03.27.jpeg",
-            features: ["3 MP HD", "WiFi Enabled", "Pan & Tilt", "Two-Way Audio"],
+            id: 101,
+            name: "Elite Smart LED TV",
+            slug: "smart-led-tv",
+            model: "ES-TV-SMART-SERIES",
+            category: "tv",
+            mrp: 18999,
+            price: 8999,
+            image: "assets/images/smart-tv-48-front.jpg",
+            images: [
+                "assets/images/smart-tv-48-front.jpg",
+                "assets/images/smart-tv-48-persp.jpg"
+            ],
+            variants: [
+                {
+                    id: "32",
+                    name: "32 Inch",
+                    image: "assets/images/smart-tv-32-front.jpg",
+                    images: ["assets/images/smart-tv-32-front.jpg"],
+                    price: 8999,
+                    mrp: 18999
+                },
+                {
+                    id: "48",
+                    name: "48 Inch",
+                    image: "assets/images/smart-tv-48-front.jpg",
+                    images: ["assets/images/smart-tv-48-front.jpg", "assets/images/smart-tv-48-persp.jpg"],
+                    price: 24999,
+                    mrp: 45999
+                }
+            ],
+            features: ["HD Ready / Full HD", "Android OS", "20W Sound", "Netflix/Prime/Hotstar"],
+            description: "Our company is the most reputed manufacturer, exporter and supplier of 32 inch TV to customers. Elegant design and durable, this TV is designed and manufactured by experienced professional with innovative technique and quality components in line with industry standards. We offer this TV at the most reasonable prices.<br><br>Can make in customer’s Brand also.",
+            specifications: "Supported Apps: Netflix|Prime Video|Disney+Hotstar|Youtube, Operating System: Android Based, Resolution: HD Ready 1366 x 768 Pixels (32\") / Full HD (48\"), Sound Output: 20 W, Refresh Rate: 60 Hz, Warranty: 1 Year Pan India",
             popular: true,
-            badge: "Indoor"
+            badge: "Best Seller"
         },
+        // === IP CAMERAS ===
         {
-            id: 10,
-            name: "Elite Smart PTZ Bullet 5 MP",
-            slug: "smart-ptz-bullet-5mp",
-            model: "ES-GX200-SV4G",
-            category: "ptz-wifi",
-            mrp: 5499,
-            price: 4299,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.21.jpeg",
-            features: ["5 MP HD", "Dual Antenna", "Outdoor Use", "Smart Detection"],
-            badge: "Outdoor"
-        },
-        {
-            id: 11,
-            name: "Elite Guard Pro PTZ 2-Way",
-            slug: "guard-pro-ptz-2way",
-            model: "ES-PTZ-SG500",
-            category: "ptz-wifi",
-            mrp: 6999,
-            price: 5499,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.25.jpeg",
-            features: ["2-Way Communication", "Dual Antenna", "Smart Alerts", "Night Vision"],
-            badge: "2-Way Audio"
-        },
-        {
-            id: 12,
-            name: "Elite SecureBullet Pro",
-            slug: "securebullet-pro",
-            model: "ES-CV240",
+            id: 30,
+            name: "2.5 MP Dome IP Camera",
+            slug: "2-5mp-dome-ip",
+            model: "ES-LNC-DI2MP-Z02",
             category: "ip",
-            mrp: 4999,
-            price: 3799,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 20.54.26.jpeg",
-            features: ["Dual Antenna WiFi", "4 LED Lights", "Outdoor Use", "Metal Body"],
-            badge: "WiFi"
-        },
-        {
-            id: 13,
-            name: "8 MP Bullet IP Camera",
-            slug: "8mp-bullet-ip",
-            model: "ES-LNC-BI8MP-QI08",
-            category: "ip",
-            mrp: 4499,
-            price: 3499,
+            mrp: 2999,
+            price: 1800,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg",
-            features: ["8 MP Ultra HD", "PoE Enabled", "LED Lights", "H.265"],
-            popular: true,
-            badge: "8MP Ultra HD"
-        },
-        {
-            id: 14,
-            name: "8 MP Dome IP Camera",
-            slug: "8mp-dome-ip",
-            model: "ES-LNC-DI8MP-ZI08",
-            category: "ip",
-            mrp: 4299,
-            price: 3299,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.15.jpeg",
-            features: ["8 MP Ultra HD", "Built-in Speaker", "4 LED Lights", "Indoor Use"],
-            badge: "8MP Ultra HD"
-        },
-        {
-            id: 15,
-            name: "5 MP Bullet IP Camera",
-            slug: "5mp-bullet-ip",
-            model: "ES-LNC-BI5MP-QI05",
             category: "ip",
             mrp: 3499,
             price: 2699,
@@ -228,6 +197,19 @@ const productsData = {
             badge: "Smart Color"
         },
         {
+            id: 31,
+            name: "5 MP Bullet IP Camera",
+            slug: "5mp-bullet-ip",
+            model: "ES-LNC-BI5MP-QI05",
+            category: "ip",
+            mrp: 3299,
+            price: 2499,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.47.jpeg",
+            features: ["5 MP HD", "Long Range IR", "Weatherproof", "H.265"],
+            description: "Robust 5MP outdoor camera with high-performance IR LEDs for clear night vision.",
+            badge: "5MP"
+        },
+        {
             id: 17,
             name: "2.5 MP Bullet IP Camera",
             slug: "2-5mp-bullet-ip",
@@ -241,7 +223,7 @@ const productsData = {
         {
             id: 18,
             name: "2.5 MP Dome IP Camera",
-            slug: "2-5mp-dome-ip",
+            slug: "2-5mp-dome-ip-zi02",
             model: "ES-LNC-DI2MP-ZI02",
             category: "ip",
             mrp: 2299,
@@ -704,8 +686,29 @@ function initProductPage() {
                 </div>
                 
                 <h1 class="product-page-title">${product.name}</h1>
-                <p class="product-model">Model: ${product.model}</p>
+                <p class="product-model">Model: <span id="productModel">${product.model}</span></p>
                 
+                ${product.variants ? `
+                    <div class="product-variants" style="margin-bottom: var(--space-lg);">
+                        <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-sm);">Size:</h4>
+                        <div class="variant-options" style="display: flex; gap: var(--space-sm);">
+                            ${product.variants.map((v, index) => `
+                                <button class="variant-btn ${index === 0 ? 'active' : ''}" 
+                                        data-id="${v.id}"
+                                        data-image="${v.image}"
+                                        data-price="${v.price}"
+                                        data-mrp="${v.mrp}"
+                                        data-name="${v.name}"
+                                        data-images='${JSON.stringify(v.images || [v.image])}'
+                                        onclick="selectVariant(this)"
+                                        style="padding: 8px 16px; border: 2px solid var(--color-bg-alt); background: transparent; border-radius: var(--radius-md); cursor: pointer; font-weight: 500; transition: all 0.2s;">
+                                    ${v.name}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
                 ${product.description ? `<p class="product-description-text" style="color:var(--color-text-light); margin-bottom:var(--space-md); line-height:1.6;">${product.description}</p>` : ''}
                 
                 <div class="product-features">
@@ -732,21 +735,16 @@ function initProductPage() {
                 ` : ''}
                 
                 <div class="product-price" style="margin-bottom: var(--space-xl);">
-                    <span class="price-current" style="font-size: var(--font-size-3xl);">${formatPrice(product.price)}</span>
-                    <span class="price-original" style="font-size: var(--font-size-xl);">${formatPrice(product.mrp)}</span>
+                    <a id="whatsappBtn" href="${whatsappUrl}" target="_blank" class="price-contact">💬 Contact for Price</a>
                 </div>
                 
                 <div class="product-cta-section">
-                    <a href="${whatsappUrl}" target="_blank" class="btn btn-whatsapp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                        </svg>
-                        Buy on WhatsApp
+                    <a id="buyBtn" href="${whatsappUrl}" target="_blank" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1rem; padding: 1rem 2rem;">
+                         Buy on WhatsApp
                     </a>
-                    <div class="contact-info">
-                        <a href="tel:+919548323302">📞 +91 95483 23302</a>
-                        <a href="mailto:elitesolutions906@gmail.com">📧 Email Us</a>
-                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light);">
+                        📞 +91 95483 23302
+                    </p>
                 </div>
             </div>
         </div>
@@ -760,6 +758,72 @@ function initProductPage() {
             </div>
         ` : ''}
     `;
+
+    // Initialize Images
+    let currentImages = product.variants ? (product.variants[0].images || [product.image]) : (product.images || [product.image]);
+    updateGallery(currentImages);
+
+    // Initial Variant State
+    if (product.variants) {
+        window.selectedVariant = product.variants[0];
+    }
+}
+
+function updateGallery(images) {
+    const galleryContainer = document.querySelector('.product-gallery');
+    if (!galleryContainer) return;
+
+    // Only rebuild if meaningful change, but strictly normally we replace content.
+    // Simple gallery: Main Image + Thumbnails (if > 1)
+
+    galleryContainer.innerHTML = `
+        <div class="product-main-image">
+            <img id="mainImage" src="../${images[0]}" alt="Product Image">
+        </div>
+        ${images.length > 1 ? `
+        <div class="product-thumbnails" style="display: flex; gap: 10px; margin-top: 10px;">
+            ${images.map((img, idx) => `
+                <div class="thumbnail" onclick="switchMainImage('${img}')" style="width: 60px; height: 60px; border-radius: 8px; overflow: hidden; curor: pointer; border: 2px solid transparent;">
+                    <img src="../${img}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            `).join('')}
+        </div>
+        ` : ''}
+    `;
+}
+
+window.switchMainImage = function (src) {
+    const mainImg = document.getElementById('mainImage');
+    if (mainImg) mainImg.src = "../" + src;
+}
+
+window.selectVariant = function (btn) {
+    // Styling
+    document.querySelectorAll('.variant-btn').forEach(b => {
+        b.style.borderColor = 'var(--color-bg-alt)';
+        b.style.color = 'var(--color-text)';
+    });
+    btn.style.borderColor = 'var(--color-secondary)';
+    btn.style.color = 'var(--color-secondary)';
+
+    // Data
+    const image = btn.dataset.image;
+    const name = btn.dataset.name;
+    const images = JSON.parse(btn.dataset.images);
+
+    // Update Gallery
+    updateGallery(images);
+
+    // Update Links
+    const productDetails = document.getElementById('productDetails');
+    const productSlug = productDetails.dataset.slug;
+    const product = getProductBySlug(productSlug);
+
+    const message = `Hi, I'm interested in ${product.name} (Size: ${name}). Please share more details.`;
+    const url = `https://wa.me/919548323302?text=${encodeURIComponent(message)}`;
+
+    document.getElementById('whatsappBtn').href = url;
+    document.getElementById('buyBtn').href = url;
 }
 
 // =====================================================

@@ -25,10 +25,14 @@
             </nav>
 
             <div class="header-actions">
+                <form class="search-form" role="search">
+                    <input type="search" class="search-input" placeholder="Search products...">
+                    <button type="submit" class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
                 <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -44,52 +48,24 @@
 
     <main class="product-page">
         <div class="container">
-            <div class="product-page-grid">
-                <div class="product-gallery">
-                    <div class="product-main-image">
-                        <img src="../assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg" alt="Elite 16 Channel DVR">
+            <div id="productDetails" data-slug="16-channel-dvr">
+                <div class="product-page-grid">
+                    <div class="product-gallery">
+                         <div class="product-main-image">
+                            <img src="../assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg" alt="Elite 16 Channel DVR">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="product-details">
-                    <div class="product-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <a href="../categories/dvr-systems.html">DVR Systems</a>
-                        <span>/</span>
-                        <span>Elite 16 Channel DVR</span>
-                    </div>
-                    
-                    <h1 class="product-page-title">Elite 16 Channel DVR</h1>
-                    <p class="product-model">Model: ES-UVR-0016CH-ZQS02</p>
-                    
-                    <p class="product-description-text" style="color:var(--color-text-light); margin-bottom:var(--space-md); line-height:1.6;">High-capacity solution for large-scale installations like commercial buildings and factories.</p>
-                    
-                    <div class="product-features">
-                        <h4>Features</h4>
-                        <ul style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; padding-left: 1.2rem;">
-                            <li>16 HD Cameras</li><li>Real-time Recording</li><li>Smart Search</li><li>High-capacity Storage</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-specifications" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
-                        <h4 style="margin-bottom: var(--space-sm);">Specifications</h4>
-                        <ul class="specs-list" style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-light);">
-                            <li style="margin-bottom: 0.5rem;">HD/Full HD Recording</li><li style="margin-bottom: 0.5rem;">2 SATA HDD Support</li><li style="margin-bottom: 0.5rem;">HDMI/VGA</li><li style="margin-bottom: 0.5rem;">2x USB</li><li style="margin-bottom: 0.5rem;">RJ45</li><li style="margin-bottom: 0.5rem;">Remote Access via CMS/App</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-price" style="margin-bottom: var(--space-xl);">
-                         <a href="https://wa.me/919548323302?text=Hi%2C%20I'm%20interested%20in%20Elite%2016%20Channel%20DVR%20(ES-UVR-0016CH-ZQS02).%20Please%20share%20more%20details." target="_blank" class="price-contact">💬 Contact for Price</a>
-                    </div>
-                    
-                    <div class="product-cta-section">
-                        <a href="https://wa.me/919548323302?text=Hi%2C%20I'm%20interested%20in%20Elite%2016%20Channel%20DVR%20(ES-UVR-0016CH-ZQS02).%20Please%20share%20more%20details." target="_blank" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1rem; padding: 1rem 2rem;">
-                            Buy on WhatsApp
-                        </a>
-                        <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light);">
-                            📞 +91 95483 23302
-                        </p>
+                    <div class="product-details">
+                         <div class="product-breadcrumb">
+                            <a href="../index.html">Home</a>
+                            <span>/</span>
+                            <a href="../categories/dvr-systems.html">DVR Systems</a>
+                            <span>/</span>
+                            <span>Elite 16 Channel DVR</span>
+                        </div>
+                        <h1 class="product-page-title">Elite 16 Channel DVR</h1>
+                        <p class="product-model">Model: ES-UVR-0016CH-ZQS02</p>
+                        <p class="product-description-text">High-capacity solution for large-scale installations.</p>
                     </div>
                 </div>
             </div>
@@ -104,13 +80,24 @@
         </div>
     </footer>
 
-    <div class="floating-buttons floating-whatsapp">
+     <div class="floating-buttons floating-whatsapp">
         <a href="https://wa.me/919548323302" class="float-btn whatsapp" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
             <span>WhatsApp</span>
         </a>
     </div>
+    
+    <div class="floating-buttons floating-call">
+         <a href="tel:+919548323302" class="float-btn call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            <span>Call Us</span>
+        </a>
+    </div>
 
-    <!-- Scripts -->
     <script src="../script.js"></script>
 </body>
 </html>
