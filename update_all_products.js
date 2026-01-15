@@ -93,34 +93,37 @@ const products = [
         name: "4 Channel NVR",
         slug: "4-channel-nvr",
         model: "ES-LNC-NVR04-PI04",
-        category: "ip",
+        category: "nvr",
         image: "assets/images/nvr-4ch.png",
-        description: "Reliable 4-channel Network Video Recorder.",
-        categoryName: "IP Cameras", // NVRs usually grouped with IP or own cat. Using IP per script.js logic or separate? script.js grouped them under "ip" category ID mostly but let's check. 
-        // Actually in script.js I put category: "ip" for NVRs. But checking previous file.. they were distinct?
-        // Let's stick to "ip" for now or "dvr-systems" if they belong there? 
-        // User asked for "dvr systems" page previously. 
-        // Let's check categorySlug. "dvr-systems.html" is for DVR. 
-        // Is there an NVR page? "ip-cameras.html" works.
-        categorySlug: "ip-cameras.html"
+        description: "Compact 4-channel NVR with built-in PoE ports for easy IP camera installation. Supports 4K recording with H.265+ compression.",
+        features: ["4 IP Channels", "4K Recording", "H.265+", "PoE Ports"],
+        specifications: "4 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 1 SATA HDD (up to 8TB), 4 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+        categoryName: "NVR Systems",
+        categorySlug: "nvr-systems.html"
     },
     {
-        name: "8 Channel NVR",
+        name: "Elite 8 Channel NVR",
         slug: "8-channel-nvr",
         model: "ES-LNC-NVR08-PI08",
-        category: "ip",
+        category: "nvr",
         image: "assets/images/nvr-8ch.png",
-        description: "High-performance 8-channel NVR.",
-        categorySlug: "ip-cameras.html"
+        description: "Professional 8-channel NVR with 8 built-in PoE ports. Ideal for medium-sized installations with advanced recording features.",
+        features: ["8 IP Channels", "4K Recording", "H.265+", "8 PoE Ports"],
+        specifications: "8 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 16TB), 8 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+        categoryName: "NVR Systems",
+        categorySlug: "nvr-systems.html"
     },
     {
-        name: "16 Channel NVR",
+        name: "Elite 16 Channel NVR",
         slug: "16-channel-nvr",
         model: "ES-LNC-NVR16-PI16",
-        category: "ip",
+        category: "nvr",
         image: "assets/images/nvr-16ch.png",
-        description: "Professional 16-channel NVR.",
-        categorySlug: "ip-cameras.html"
+        description: "High-capacity 16-channel NVR with 16 PoE ports for large installations. Supports dual SATA HDDs for extended storage.",
+        features: ["16 IP Channels", "4K Recording", "H.265+", "16 PoE Ports"],
+        specifications: "16 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 20TB), 16 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+        categoryName: "NVR Systems",
+        categorySlug: "nvr-systems.html"
     },
     {
         name: "32 Channel NVR",
@@ -128,37 +131,46 @@ const products = [
         model: "ES-LNC-NVR32-PI32",
         category: "ip",
         image: "assets/images/nvr-32ch.png",
-        description: "Enterprise-grade 32-channel NVR.",
-        categorySlug: "ip-cameras.html"
+        description: "Enterprise-grade 32-channel NVR for large-scale surveillance. Supports multiple HDDs and remote management.",
+        features: ["32 IP Channels", "4K Recording", "H.265+", "Enterprise Grade"],
+        specifications: "32 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 4 SATA HDD (up to 40TB), HDMI/VGA Output, RJ45 Ethernet, DC 12V/AC 100-240V",
+        categoryName: "NVR Systems",
+        categorySlug: "nvr-systems.html"
     },
     // === POE SWITCHES ===
     {
         name: "Elite 4 Port POE Switch",
         slug: "4-port-poe",
-        model: "ES-POE4SB-DI04",
+        model: "ES-POE3690LIP04",
         category: "poe",
         image: "assets/images/poe-switch-4port.png",
-        description: "Compact 4-Port PoE switch.",
+        description: "Compact 4-port PoE switch ideal for small IP camera installations. Delivers up to 60W total power with Gigabit speeds.",
+        features: ["4 POE Ports", "60W Total Power", "Gigabit Speed", "Plug & Play"],
+        specifications: "4 PoE Ports (IEEE 802.3af/at), 60W Total Power Budget, 2 Uplink Ports, 10/100/1000Mbps, Plug & Play, Metal Housing",
         categoryName: "POE Switches",
         categorySlug: "poe-switches.html"
     },
     {
         name: "Elite 8 Port POE Switch",
         slug: "8-port-poe",
-        model: "ES-POE8SB-DI08",
+        model: "ES-POE2580LIP08",
         category: "poe",
         image: "assets/images/poe-switch-8port.png",
-        description: "8-Port PoE switch with Gigabit uplink.",
+        description: "Professional 8-port PoE switch with 120W power budget for medium installations. Features 2 Gigabit uplink ports for network expansion.",
+        features: ["8 POE Ports", "120W Total Power", "Gigabit Speed", "2 Uplink Ports"],
+        specifications: "8 PoE Ports (IEEE 802.3af/at), 120W Total Power Budget, 2 Gigabit Uplink Ports, 10/100/1000Mbps, LED Indicators, Rack Mountable",
         categoryName: "POE Switches",
         categorySlug: "poe-switches.html"
     },
     {
         name: "Elite 16 Port POE Switch",
         slug: "16-port-poe",
-        model: "ES-POE16SB-DI16",
+        model: "ES-POE1470LIP016",
         category: "poe",
         image: "assets/images/poe-switch-16port.png",
-        description: "High-power 16-Port PoE switch.",
+        description: "High-power 16-port PoE switch with 250W power budget for large installations. Rack mountable design for professional deployment.",
+        features: ["16 POE Ports", "250W Total Power", "Gigabit Speed", "Rack Mountable"],
+        specifications: "16 PoE Ports (IEEE 802.3af/at), 250W Total Power Budget, 2 SFP Uplink Ports, 10/100/1000Mbps, 19-inch Rack Mount, Metal Chassis",
         categoryName: "POE Switches",
         categorySlug: "poe-switches.html"
     },

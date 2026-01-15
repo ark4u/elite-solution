@@ -13,6 +13,7 @@ const productsData = {
         { id: "ip", name: "IP Cameras", icon: "🌐" },
         { id: "ptz-wifi", name: "PTZ & WiFi Cameras", icon: "🎥" },
         { id: "dvr", name: "DVR Systems", icon: "📼" },
+        { id: "nvr", name: "NVR Systems", icon: "💾" },
         { id: "poe", name: "POE Switches", icon: "🔌" },
         { id: "tv", name: "Smart TV", icon: "📺" }
     ],
@@ -341,6 +342,66 @@ const productsData = {
             specifications: "HD/Full HD Recording, 2/4 SATA HDD Support, HDMI/VGA, Multiple USB Ports, RJ45, Remote Access via CMS/App, DC 12V",
             badge: "32 Channel"
         },
+        // === NVR SYSTEMS ===
+        {
+            id: 40,
+            name: "Elite 4 Channel NVR",
+            slug: "4-channel-nvr",
+            model: "ES-LNC-NVR04-PI04",
+            category: "nvr",
+            mrp: 5999,
+            price: 4499,
+            image: "assets/images/nvr-4ch.png",
+            features: ["4 IP Channels", "4K Recording", "H.265+", "PoE Ports"],
+            description: "Compact 4-channel NVR with built-in PoE ports for easy IP camera installation. Supports 4K recording with H.265+ compression.",
+            specifications: "4 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 1 SATA HDD (up to 8TB), 4 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            popular: true,
+            badge: "4 Channel"
+        },
+        {
+            id: 41,
+            name: "Elite 8 Channel NVR",
+            slug: "8-channel-nvr",
+            model: "ES-LNC-NVR08-PI08",
+            category: "nvr",
+            mrp: 8999,
+            price: 6999,
+            image: "assets/images/nvr-8ch.png",
+            features: ["8 IP Channels", "4K Recording", "H.265+", "8 PoE Ports"],
+            description: "Professional 8-channel NVR with 8 built-in PoE ports. Ideal for medium-sized installations with advanced recording features.",
+            specifications: "8 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 16TB), 8 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            badge: "8 Channel"
+        },
+        {
+            id: 42,
+            name: "Elite 16 Channel NVR",
+            slug: "16-channel-nvr",
+            model: "ES-LNC-NVR16-PI16",
+            category: "nvr",
+            mrp: 14999,
+            price: 11999,
+            image: "assets/images/nvr-16ch.png",
+            features: ["16 IP Channels", "4K Recording", "H.265+", "16 PoE Ports"],
+            description: "High-capacity 16-channel NVR with 16 PoE ports for large installations. Supports dual SATA HDDs for extended storage.",
+            specifications: "16 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 20TB), 16 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            badge: "16 Channel"
+        },
+        {
+            id: 43,
+            name: "Elite 32 Channel NVR",
+            slug: "32-channel-nvr",
+            model: "ES-LNC-NVR32-PI32",
+            category: "nvr",
+            mrp: 24999,
+            price: 19999,
+            image: "assets/images/nvr-32ch.png",
+            features: ["32 IP Channels", "4K Recording", "H.265+", "Enterprise Grade"],
+            description: "Enterprise-grade 32-channel NVR for large-scale surveillance. Supports multiple HDDs and remote management.",
+            specifications: "32 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 4 SATA HDD (up to 40TB), HDMI/VGA Output, RJ45 Ethernet, DC 12V/AC 100-240V",
+            popular: true,
+            badge: "32 Channel"
+        },
+        // === POE SWITCHES ===
         {
             id: 23,
             name: "Elite 4 Port POE Switch",
@@ -350,7 +411,9 @@ const productsData = {
             mrp: 2999,
             price: 2399,
             image: "assets/images/poe-switch-4port.png",
-            features: ["4 POE Ports", "60W Total", "Gigabit", "Plug & Play"],
+            features: ["4 POE Ports", "60W Total Power", "Gigabit Speed", "Plug & Play"],
+            description: "Compact 4-port PoE switch ideal for small IP camera installations. Delivers up to 60W total power with Gigabit speeds.",
+            specifications: "4 PoE Ports (IEEE 802.3af/at), 60W Total Power Budget, 2 Uplink Ports, 10/100/1000Mbps, Plug & Play, Metal Housing",
             badge: "4 Port"
         },
         {
@@ -362,7 +425,9 @@ const productsData = {
             mrp: 4999,
             price: 3999,
             image: "assets/images/poe-switch-8port.png",
-            features: ["8 POE Ports", "120W Total", "Gigabit", "2 Uplinks"],
+            features: ["8 POE Ports", "120W Total Power", "Gigabit Speed", "2 Uplink Ports"],
+            description: "Professional 8-port PoE switch with 120W power budget for medium installations. Features 2 Gigabit uplink ports for network expansion.",
+            specifications: "8 PoE Ports (IEEE 802.3af/at), 120W Total Power Budget, 2 Gigabit Uplink Ports, 10/100/1000Mbps, LED Indicators, Rack Mountable",
             popular: true,
             badge: "8 Port"
         },
@@ -375,7 +440,9 @@ const productsData = {
             mrp: 8999,
             price: 6999,
             image: "assets/images/poe-switch-16port.png",
-            features: ["16 POE Ports", "250W Total", "Rack Mount", "Gigabit"],
+            features: ["16 POE Ports", "250W Total Power", "Gigabit Speed", "Rack Mountable"],
+            description: "High-power 16-port PoE switch with 250W power budget for large installations. Rack mountable design for professional deployment.",
+            specifications: "16 PoE Ports (IEEE 802.3af/at), 250W Total Power Budget, 2 SFP Uplink Ports, 10/100/1000Mbps, 19-inch Rack Mount, Metal Chassis",
             badge: "16 Port"
         },
         {
