@@ -19,10 +19,12 @@ const products = [
     {
         name: "2.5 MP Dome IP Camera",
         slug: "2-5mp-dome-ip",
-        model: "ES-LNC-DI2MP-Z02",
+        model: "ES-LNC-DI2MP-ZI02",
         category: "ip",
         image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg",
-        description: "Delivers clear high-definition video with stable network transmission.",
+        description: "Compact 2.5MP dome IP camera with clear HD video output. Ideal for indoor monitoring with discreet design and reliable network connectivity.",
+        features: ["2.5 MP HD", "PoE / DC 12V", "IR Night Vision 30M", "H.265 Compression"],
+        specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
@@ -31,8 +33,10 @@ const products = [
         slug: "2-5mp-bullet-ip",
         model: "ES-LNC-BI2MP-QI02",
         category: "ip",
-        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.19.jpeg",
-        description: "Durable outdoor bullet camera with sharp HD quality.",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.13.jpeg",
+        description: "Durable 2.5MP bullet IP camera suitable for outdoor installations. Weatherproof design with reliable PoE connectivity for easy deployment.",
+        features: ["2.5 MP HD", "PoE Enabled", "IR Night Vision 30M", "H.265"],
+        specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
@@ -41,8 +45,10 @@ const products = [
         slug: "5mp-dome-ip",
         model: "ES-LNC-DI5MP-ZI05",
         category: "ip",
-        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.33.jpeg",
-        description: "Ultra-clear 5MP HD video with enhanced detail.",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.26.jpeg",
+        description: "High-resolution 5MP dome IP camera delivering crystal-clear footage. Enhanced compression for efficient storage and smooth streaming.",
+        features: ["5 MP Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+        specifications: "5 MP CMOS Sensor, 2.8mm/3.6mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
@@ -51,8 +57,10 @@ const products = [
         slug: "5mp-bullet-ip",
         model: "ES-LNC-BI5MP-QI05",
         category: "ip",
-        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.34.47.jpeg",
-        description: "Robust 5MP outdoor camera with high-performance IR LEDs.",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
+        description: "Robust 5MP outdoor bullet IP camera engineered for demanding environments. High-performance IR LEDs provide clear night vision up to 40 meters.",
+        features: ["5 MP Ultra-HD", "Long Range IR 40M", "Weatherproof IP67", "H.265+"],
+        specifications: "5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 40M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
@@ -61,18 +69,22 @@ const products = [
         slug: "8mp-bullet-ip",
         model: "ES-LNC-BI8MP-QI08",
         category: "ip",
-        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.35.25.jpeg",
-        description: "Top-tier 4K surveillance with AI capabilities.",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.15.jpeg",
+        description: "Top-tier 8MP (4K) bullet IP camera for professional-grade surveillance. Extended IR range up to 50 meters for expansive outdoor coverage.",
+        features: ["8 MP 4K Ultra-HD", "Long Range IR 50M", "Weatherproof IP67", "H.265+"],
+        specifications: "8 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 50M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
     {
         name: "8 MP Dome IP Camera",
         slug: "8mp-dome-ip",
-        model: "ES-LNC-DI8MP-MI08",
+        model: "ES-LNC-DI8MP-ZI08",
         category: "ip",
-        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.35.40.jpeg",
-        description: "Discreet yet powerful 4K dome camera.",
+        image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.08.jpeg",
+        description: "Premium 8MP (4K) dome IP camera for superior detail and clarity. Advanced smart IR technology ensures optimal night vision without overexposure.",
+        features: ["8 MP 4K Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+        specifications: "8 MP CMOS Sensor, 2.8mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
         categoryName: "IP Cameras",
         categorySlug: "ip-cameras.html"
     },
@@ -363,6 +375,32 @@ const template = (p) => `<!DOCTYPE html>
                         <h1 class="product-page-title">${p.name}</h1>
                         <p class="product-model">Model: ${p.model}</p>
                         <p class="product-description-text">${p.description}</p>
+                        
+                        ${p.features ? `
+                        <div class="product-features" style="margin-top: 1.5rem;">
+                            <h4 style="margin-bottom: 0.75rem;">Key Features</h4>
+                            <div class="features-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                                ${p.features.map(f => `
+                                <div class="feature-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#10b981"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                    <span>${f}</span>
+                                </div>`).join('')}
+                            </div>
+                        </div>` : ''}
+                        
+                        ${p.specifications ? `
+                        <div class="product-specifications" style="margin-top: 1.5rem;">
+                            <h4 style="margin-bottom: 0.75rem;">Specifications</h4>
+                            <ul style="list-style: disc; padding-left: 1.5rem; color: #666;">
+                                ${p.specifications.split(',').map(s => `<li style="margin-bottom: 0.5rem;">${s.trim()}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                        
+                        <div class="product-cta" style="margin-top: 2rem;">
+                            <a href="https://wa.me/919548323302?text=${encodeURIComponent('Hi, I am interested in ' + p.name + ' (' + p.model + '). Please share more details.')}" target="_blank" class="btn btn-whatsapp" style="display: inline-block; padding: 1rem 2rem; background: #25d366; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                                Buy on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

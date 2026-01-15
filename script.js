@@ -106,14 +106,16 @@ const productsData = {
         },
         {
             id: 7,
-            name: "Elite PTZ Camera 5 MP",
+            name: "Elite ApexGuard PTZ 5 MP",
             slug: "elite-ptz-5mp",
             model: "ES-PTZ8990-05MP",
             category: "ptz-wifi",
             mrp: 8999,
             price: 6999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg",
-            features: ["5 MP HD", "30X Zoom", "360° Rotation", "Day/Night Vision"],
+            features: ["5 MP HD", "30X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 150M"],
+            description: "Heavy-duty 5MP speed dome PTZ camera with 30X optical zoom for long-distance surveillance. Full 360° pan and high-speed tracking for comprehensive coverage.",
+            specifications: "5 MP CMOS Sensor, 30X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 150M, PoE+ / DC 24V, IP66 Weatherproof, -40°C to +70°C",
             popular: true,
             badge: "30X Zoom"
         },
@@ -126,8 +128,38 @@ const productsData = {
             mrp: 12999,
             price: 9999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg",
-            features: ["8 MP Ultra HD", "Wall Mount", "360° Rotation", "Professional Grade"],
+            features: ["8 MP 4K Ultra-HD", "25X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 200M"],
+            description: "Professional-grade 8MP (4K) PTZ camera with 25X optical zoom. Designed for large-scale installations requiring maximum detail and extended range.",
+            specifications: "8 MP CMOS Sensor, 25X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 200M, PoE+ / DC 24V, IP67 Weatherproof, -40°C to +70°C",
             badge: "Professional"
+        },
+        {
+            id: 9,
+            name: "Elite WiFi Dome Camera 3 MP",
+            slug: "elite-wifi-dome-3mp",
+            model: "ES-IPC360-3MP",
+            category: "ptz-wifi",
+            mrp: 3999,
+            price: 2999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg",
+            features: ["3 MP HD", "360° Panoramic View", "WiFi Connectivity", "Two-Way Audio"],
+            description: "Smart 3MP WiFi dome camera with 360-degree panoramic coverage. Easy wireless setup with two-way audio for home and small office monitoring.",
+            specifications: "3 MP CMOS Sensor, 360° Panoramic, WiFi 2.4GHz, Two-Way Audio, SD Card Slot (up to 128GB), DC 5V, Indoor Use",
+            badge: "WiFi"
+        },
+        {
+            id: 10,
+            name: "Elite SecureBullet Pro 4 MP",
+            slug: "securebullet-pro",
+            model: "ES-CV240-4MP",
+            category: "ptz-wifi",
+            mrp: 4999,
+            price: 3999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg",
+            features: ["4 MP HD", "WiFi + Ethernet", "Smart Motion Detection", "IP66 Weatherproof"],
+            description: "Pro-grade 4MP WiFi bullet camera with dual connectivity options. Advanced smart motion detection with push notifications for reliable security.",
+            specifications: "4 MP CMOS Sensor, 3.6mm Fixed Lens, WiFi 2.4GHz + RJ45, Smart Motion Detection, IR Distance 30M, IP66 Weatherproof, DC 12V, -30°C to +60°C",
+            badge: "Smart Detection"
         },
         // === SMART TV ===
         {
@@ -172,17 +204,15 @@ const productsData = {
             id: 30,
             name: "2.5 MP Dome IP Camera",
             slug: "2-5mp-dome-ip",
-            model: "ES-LNC-DI2MP-Z02",
+            model: "ES-LNC-DI2MP-ZI02",
             category: "ip",
             mrp: 2999,
             price: 1800,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg",
-            category: "ip",
-            mrp: 3499,
-            price: 2699,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.08.jpeg",
-            features: ["5 MP HD", "Smart Color Night", "IR 30M", "H.265"],
-            badge: "Smart Color"
+            features: ["2.5 MP HD", "PoE / DC 12V", "IR Night Vision 30M", "H.265 Compression"],
+            description: "Compact 2.5MP dome IP camera with clear HD video output. Ideal for indoor monitoring with discreet design and reliable network connectivity.",
+            specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C",
+            badge: "IP Camera"
         },
         {
             id: 16,
@@ -193,8 +223,10 @@ const productsData = {
             mrp: 3299,
             price: 2499,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.26.jpeg",
-            features: ["5 MP HD", "Smart Color Night", "IR 30M", "H.265"],
-            badge: "Smart Color"
+            features: ["5 MP Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+            description: "High-resolution 5MP dome IP camera delivering crystal-clear footage. Enhanced compression for efficient storage and smooth streaming.",
+            specifications: "5 MP CMOS Sensor, 2.8mm/3.6mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
+            badge: "5MP HD"
         },
         {
             id: 31,
@@ -205,8 +237,9 @@ const productsData = {
             mrp: 3299,
             price: 2499,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
-            features: ["5 MP HD", "Long Range IR", "Weatherproof", "H.265"],
-            description: "Robust 5MP outdoor camera with high-performance IR LEDs for clear night vision.",
+            features: ["5 MP Ultra-HD", "Long Range IR 40M", "Weatherproof IP67", "H.265+"],
+            description: "Robust 5MP outdoor bullet IP camera engineered for demanding environments. High-performance IR LEDs provide clear night vision up to 40 meters.",
+            specifications: "5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 40M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
             badge: "5MP"
         },
         {
@@ -218,18 +251,38 @@ const productsData = {
             mrp: 2499,
             price: 1899,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.13.jpeg",
-            features: ["2.5 MP HD", "PoE Enabled", "IR Night Vision", "H.265"]
+            features: ["2.5 MP HD", "PoE Enabled", "IR Night Vision 30M", "H.265"],
+            description: "Durable 2.5MP bullet IP camera suitable for outdoor installations. Weatherproof design with reliable PoE connectivity for easy deployment.",
+            specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C"
         },
         {
-            id: 18,
-            name: "2.5 MP Dome IP Camera",
-            slug: "2-5mp-dome-ip-zi02",
-            model: "ES-LNC-DI2MP-ZI02",
+            id: 32,
+            name: "8 MP Dome IP Camera",
+            slug: "8mp-dome-ip",
+            model: "ES-LNC-DI8MP-ZI08",
             category: "ip",
-            mrp: 2299,
-            price: 1799,
-            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.01.jpeg",
-            features: ["2.5 MP HD", "IR Night Vision", "Indoor Use", "H.265"]
+            mrp: 4499,
+            price: 3499,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.08.jpeg",
+            features: ["8 MP 4K Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+            description: "Premium 8MP (4K) dome IP camera for superior detail and clarity. Advanced smart IR technology ensures optimal night vision without overexposure.",
+            specifications: "8 MP CMOS Sensor, 2.8mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
+            badge: "4K Ultra HD"
+        },
+        {
+            id: 33,
+            name: "8 MP Bullet IP Camera",
+            slug: "8mp-bullet-ip",
+            model: "ES-LNC-BI8MP-QI08",
+            category: "ip",
+            mrp: 4699,
+            price: 3699,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.15.jpeg",
+            features: ["8 MP 4K Ultra-HD", "Long Range IR 50M", "Weatherproof IP67", "H.265+"],
+            description: "Top-tier 8MP (4K) bullet IP camera for professional-grade surveillance. Extended IR range up to 50 meters for expansive outdoor coverage.",
+            specifications: "8 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 50M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
+            popular: true,
+            badge: "4K Ultra HD"
         },
         {
             id: 19,
