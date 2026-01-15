@@ -148,7 +148,7 @@ const productsData = {
                     id: "32",
                     name: "32 Inch",
                     image: "assets/images/smart-tv-48-front.jpg",
-                    images: ["assets/images/smart-tv-48-front.jpg"],
+                    images: ["assets/images/smart-tv-48-front.jpg", "assets/images/smart-tv-back.jpg"],
                     price: 8999,
                     mrp: 18999
                 },
@@ -162,7 +162,7 @@ const productsData = {
                 }
             ],
             features: ["HD Ready / Full HD", "Android OS", "20W Sound", "Netflix/Prime/Hotstar"],
-            description: "Our company is the most reputed manufacturer, exporter and supplier of 32 inch TV to customers. Elegant design and durable, this TV is designed and manufactured by experienced professional with innovative technique and quality components in line with industry standards. We offer this TV at the most reasonable prices.<br><br>Can make in customer’s Brand also.",
+            description: "Our company is the most reputed manufacturer, exporter and supplier of 32 inch TV to customers. Elegant design and durable, this TV is designed and manufactured by experienced professional with innovative technique and quality components in line with industry standards. We offer this TV at the most reasonable prices.<br><br>We also offer manufacturing under the customer's brand.",
             specifications: "Supported Apps: Netflix|Prime Video|Disney+Hotstar|Youtube, Operating System: Android Based, Resolution: HD Ready 1366 x 768 Pixels (32\") / Full HD (48\"), Sound Output: 20 W, Refresh Rate: 60 Hz, Warranty: 1 Year Pan India",
             popular: true,
             badge: "Best Seller"
