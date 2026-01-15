@@ -980,14 +980,17 @@ h6 {
 .float-btn {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-lg);
+    justify-content: center;
+    width: 60px;
+    height: 60px;
     border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: var(--font-size-sm);
     box-shadow: var(--shadow-xl);
     transition: all var(--transition-base);
     animation: pulse 2s infinite;
+}
+
+.float-btn span {
+    display: none;
 }
 
 .float-btn.whatsapp {
@@ -1001,12 +1004,12 @@ h6 {
 }
 
 .float-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .float-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 @keyframes pulse {
@@ -1475,14 +1478,6 @@ h6 {
 
     .floating-call {
         right: 15px;
-    }
-
-    .float-btn {
-        padding: var(--space-md);
-    }
-
-    .float-btn span {
-        display: none;
     }
 
     .search-form {
