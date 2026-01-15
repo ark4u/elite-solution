@@ -21,12 +21,14 @@ const productsData = {
             id: 1,
             name: "2.5 MP Dome Analog Camera",
             slug: "2-5mp-dome-analog",
-            model: "ES-UNC-DA4CH-ZA1",
+            model: "ES-UNC-DA2MP-ZA1",
             category: "analog",
             mrp: 1800,
             price: 1300,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg",
-            features: ["2.5 MP Resolution", "IR Night Vision", "Indoor/Outdoor", "Weatherproof"],
+            features: ["2.5 MP HD Output", "Clear Day & Night", "Strong Dome Design", "Low Light Performance"],
+            description: "Delivers clear high-definition video with reliable day and night performance. Compact dome housing ideal for discreet monitoring.",
+            specifications: "3.6mm Fixed Lens, Analog (CVBS/AHD) Video Output, 20-30m IR Distance, Auto IR Cut Filter, Plastic/Metal Dome Body, DC 12V, -10°C to 55°C",
             popular: true,
             badge: "Best Seller"
         },
@@ -34,12 +36,14 @@ const productsData = {
             id: 2,
             name: "2.5 MP Bullet Analog Camera",
             slug: "2-5mp-bullet-analog",
-            model: "ES-UNC-BA4CH-QB1",
+            model: "ES-UNC-BA2MP-QA2",
             category: "analog",
             mrp: 1850,
             price: 1350,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.25.jpeg",
-            features: ["2.5 MP Resolution", "IR Night Vision", "Metal Body", "Weatherproof"],
+            features: ["2.5 MP HD Output", "Long-range Night Vision", "Weatherproof Bullet", "Low Power Consumption"],
+            description: "Durable and reliable outdoor security solution with sharp HD quality and powerful infrared night vision.",
+            specifications: "High-quality CMOS sensor, Analog HD (AHD) Output, 20-30m IR Distance, 0 Lux (IR ON), DC 12V, Weatherproof",
             popular: true,
             badge: "Popular"
         },
@@ -52,7 +56,9 @@ const productsData = {
             mrp: 2499,
             price: 1899,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.39.jpeg",
-            features: ["5 MP HD", "Day/Night Vision", "IP65 Rated", "DWDR"],
+            features: ["5 MP Ultra-HD", "Sharp Image Quality", "Infrared Night Vision", "Weather-resistant"],
+            description: "Ultra-clear HD video with enhanced detail for professional surveillance. Suitable for both indoor and outdoor discreet monitoring.",
+            specifications: "Fixed Lens, AHD Output, Up to 30m IR Distance, Auto (ICR), 0 Lux (IR ON), DC 12V, Weatherproof",
             badge: "5MP HD"
         },
         {
@@ -64,19 +70,23 @@ const productsData = {
             mrp: 2599,
             price: 1999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
-            features: ["5 MP HD", "Day/Night Vision", "IP65 Rated", "DWDR"],
+            features: ["5 MP Ultra-HD", "Powerful IR Night Vision", "Weatherproof Housing", "Long-distance Viewing"],
+            description: "Ideal for outdoor surveillance with excellent clarity and long-range visibility. Robust design ensures performance in various conditions.",
+            specifications: "High-performance CMOS sensor, AHD Output, Up to 30m IR Distance, 0 Lux (IR ON), DC 12V, -10°C to +55°C, Weatherproof",
             badge: "5MP HD"
         },
         {
             id: 5,
             name: "8 MP Bullet Analog Camera",
             slug: "8mp-bullet-analog",
-            model: "ES-UNC-BA8MP-QA8",
+            model: "ES-LNC-BI8MP-QI08",
             category: "analog",
             mrp: 3499,
             price: 2699,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.21.jpeg",
-            features: ["8 MP Ultra HD", "Long Range IR", "Metal Body", "Weatherproof"],
+            features: ["8 MP Analog Output", "Stable Transmission", "Long-range Night Vision", "Weather-resistant"],
+            description: "Engineered for high-resolution analog surveillance with ultra-clear video. Ideal for outdoor and long-range monitoring.",
+            specifications: "AHD Output, 30-40m IR Distance, Auto (ICR), 0 Lux (IR ON), DC 12V, Weatherproof Metal/Plastic Body",
             popular: true,
             badge: "8MP Ultra HD"
         },
@@ -89,7 +99,9 @@ const productsData = {
             mrp: 3399,
             price: 2599,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.38.jpeg",
-            features: ["8 MP Ultra HD", "IR Night Vision", "Indoor Use", "Wide Angle"],
+            features: ["8 MP Ultra-resolution", "Advanced Analog HD", "Powerful IR LEDs", "Indoor/Outdoor"],
+            description: "High-precision surveillance with ultra-clear video and enhanced depth. Blends easily into any environment.",
+            specifications: "Advanced CMOS Sensor, AHD Output, Up to 30m Night Vision, Auto (ICR), 0 Lux (IR ON), DC 12V, Ceiling/Wall Mounting",
             badge: "8MP Ultra HD"
         },
         {
@@ -246,7 +258,9 @@ const productsData = {
             mrp: 4999,
             price: 3999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.49.45.jpeg",
-            features: ["4 Channel", "H.265+", "Mobile App", "1 SATA Port"],
+            features: ["4 Analog Channels", "HD Recording", "Easy Interface", "HDMI/VGA Output"],
+            description: "Reliable solution for small surveillance setups like homes, shops, and offices.",
+            specifications: "BNC Input, H.264/H.265 Compression, 1 SATA HDD Support, HDMI/VGA, USB Ports, RJ45 Ethernet, DC 12V",
             popular: true,
             badge: "4 Channel"
         },
@@ -259,7 +273,9 @@ const productsData = {
             mrp: 6999,
             price: 5499,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
-            features: ["8 Channel", "H.265+", "USB Backup", "2 SATA Ports"],
+            features: ["8 HD Analog Channels", "Multi-channel Playback", "Optimized Compression", "Advanced Search"],
+            description: "Designed for retail spaces, warehouses, and residential complexes requiring extended coverage.",
+            specifications: "HD/Full HD Recording, 1 SATA HDD (high capacity), HDMI/VGA, 2x USB, RJ45, Remote Access via App",
             badge: "8 Channel"
         },
         {
@@ -271,7 +287,9 @@ const productsData = {
             mrp: 9999,
             price: 7999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
-            features: ["16 Channel", "H.265+", "HDMI Output", "4 SATA Ports"],
+            features: ["16 HD Cameras", "Real-time Recording", "Smart Search", "High-capacity Storage"],
+            description: "High-capacity solution for large-scale installations like commercial buildings and factories.",
+            specifications: "HD/Full HD Recording, 2 SATA HDD Support, HDMI/VGA, 2x USB, RJ45, Remote Access via CMS/App",
             badge: "16 Channel"
         },
         {
@@ -283,7 +301,9 @@ const productsData = {
             mrp: 14999,
             price: 11999,
             image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.09.41.jpeg",
-            features: ["32 Channel", "H.265+", "RAID Support", "8 SATA Ports"],
+            features: ["32 HD Channels", "Powerful Processing", "Smart Search", "Enterprise Security"],
+            description: "High-performance system for campuses, malls, and enterprise environments.",
+            specifications: "HD/Full HD Recording, 2/4 SATA HDD Support, HDMI/VGA, Multiple USB Ports, RJ45, Remote Access via CMS/App, DC 12V",
             badge: "32 Channel"
         },
         {
@@ -686,6 +706,8 @@ function initProductPage() {
                 <h1 class="product-page-title">${product.name}</h1>
                 <p class="product-model">Model: ${product.model}</p>
                 
+                ${product.description ? `<p class="product-description-text" style="color:var(--color-text-light); margin-bottom:var(--space-md); line-height:1.6;">${product.description}</p>` : ''}
+                
                 <div class="product-features">
                     <h4>Features</h4>
                     <div class="features-list">
@@ -699,6 +721,15 @@ function initProductPage() {
                         `).join('')}
                     </div>
                 </div>
+
+                ${product.specifications ? `
+                <div class="product-specifications" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
+                    <h4 style="margin-bottom: var(--space-sm);">Specifications</h4>
+                    <ul class="specs-list" style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-light);">
+                        ${product.specifications.split(',').map(spec => `<li style="margin-bottom: 0.5rem;">${spec.trim()}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
                 
                 <div class="product-price" style="margin-bottom: var(--space-xl);">
                     <span class="price-current" style="font-size: var(--font-size-3xl);">${formatPrice(product.price)}</span>
