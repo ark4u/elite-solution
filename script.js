@@ -1,40 +1,594 @@
 /**
- * Elite Solution - E-commerce Website
- * Vanilla JavaScript for Interactivity
+ * Elite Solution - Main JavaScript
+ * Modern E-commerce functionality
  */
 
-// ===================================
-// DOM Ready Handler
-// ===================================
-document.addEventListener('DOMContentLoaded', function () {
-    initSlider();
-    initMobileMenu();
-    initTabs();
-    initPagination();
-    initSmoothScroll();
-    initChatSupport();
-    initLazyLoading();
-});
+// =====================================================
+// PRODUCT DATA
+// =====================================================
 
-// ===================================
-// Hero Slider
-// ===================================
-function initSlider() {
-    const slider = document.querySelector('.slider');
+const productsData = {
+    categories: [
+        { id: "analog", name: "Analog Cameras", icon: "📷" },
+        { id: "ip", name: "IP Cameras", icon: "🌐" },
+        { id: "ptz-wifi", name: "PTZ & WiFi Cameras", icon: "🎥" },
+        { id: "dvr", name: "DVR Systems", icon: "📼" },
+        { id: "nvr", name: "NVR Systems", icon: "💾" },
+        { id: "poe", name: "POE Switches", icon: "🔌" },
+        { id: "tv", name: "Smart TV", icon: "📺" }
+    ],
+    products: [
+        {
+            id: 1,
+            name: "2.5 MP Dome Analog Camera",
+            slug: "2-5mp-dome-analog",
+            model: "ES-UNC-DA2MP-ZA1",
+            category: "analog",
+            mrp: 1800,
+            price: 1300,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.10.jpeg",
+            features: ["2.5 MP HD Output", "Clear Day & Night", "Strong Dome Design", "Low Light Performance"],
+            description: "Delivers clear high-definition video with reliable day and night performance. Compact dome housing ideal for discreet monitoring.",
+            specifications: "3.6mm Fixed Lens, Analog (CVBS/AHD) Video Output, 20-30m IR Distance, Auto IR Cut Filter, Plastic/Metal Dome Body, DC 12V, -10°C to 55°C",
+            popular: true,
+            badge: "Best Seller"
+        },
+        {
+            id: 2,
+            name: "2.5 MP Bullet Analog Camera",
+            slug: "2-5mp-bullet-analog",
+            model: "ES-UNC-BA2MP-QA2",
+            category: "analog",
+            mrp: 1850,
+            price: 1350,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.25.jpeg",
+            features: ["2.5 MP HD Output", "Long-range Night Vision", "Weatherproof Bullet", "Low Power Consumption"],
+            description: "Durable and reliable outdoor security solution with sharp HD quality and powerful infrared night vision.",
+            specifications: "High-quality CMOS sensor, Analog HD (AHD) Output, 20-30m IR Distance, 0 Lux (IR ON), DC 12V, Weatherproof",
+            popular: true,
+            badge: "Popular"
+        },
+        {
+            id: 3,
+            name: "5 MP Dome Analog Camera",
+            slug: "5mp-dome-analog",
+            model: "ES-UNC-DA5MP-ZA5",
+            category: "analog",
+            mrp: 2499,
+            price: 1899,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.39.jpeg",
+            features: ["5 MP Ultra-HD", "Sharp Image Quality", "Infrared Night Vision", "Weather-resistant"],
+            description: "Ultra-clear HD video with enhanced detail for professional surveillance. Suitable for both indoor and outdoor discreet monitoring.",
+            specifications: "Fixed Lens, AHD Output, Up to 30m IR Distance, Auto (ICR), 0 Lux (IR ON), DC 12V, Weatherproof",
+            badge: "5MP HD"
+        },
+        {
+            id: 4,
+            name: "5 MP Bullet Analog Camera",
+            slug: "5mp-bullet-analog",
+            model: "ES-UNC-BA5MP-QA5",
+            category: "analog",
+            mrp: 2599,
+            price: 1999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
+            features: ["5 MP Ultra-HD", "Powerful IR Night Vision", "Weatherproof Housing", "Long-distance Viewing"],
+            description: "Ideal for outdoor surveillance with excellent clarity and long-range visibility. Robust design ensures performance in various conditions.",
+            specifications: "High-performance CMOS sensor, AHD Output, Up to 30m IR Distance, 0 Lux (IR ON), DC 12V, -10°C to +55°C, Weatherproof",
+            badge: "5MP HD"
+        },
+        {
+            id: 5,
+            name: "8 MP Bullet Analog Camera",
+            slug: "8mp-bullet-analog",
+            model: "ES-LNC-BI8MP-QI08",
+            category: "analog",
+            mrp: 3499,
+            price: 2699,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.21.jpeg",
+            features: ["8 MP Analog Output", "Stable Transmission", "Long-range Night Vision", "Weather-resistant"],
+            description: "Engineered for high-resolution analog surveillance with ultra-clear video. Ideal for outdoor and long-range monitoring.",
+            specifications: "AHD Output, 30-40m IR Distance, Auto (ICR), 0 Lux (IR ON), DC 12V, Weatherproof Metal/Plastic Body",
+            popular: true,
+            badge: "8MP Ultra HD"
+        },
+        {
+            id: 6,
+            name: "8 MP Dome Analog Camera",
+            slug: "8mp-dome-analog",
+            model: "ES-UNC-DA8MP-ZA8",
+            category: "analog",
+            mrp: 3399,
+            price: 2599,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.40.38.jpeg",
+            features: ["8 MP Ultra-resolution", "Advanced Analog HD", "Powerful IR LEDs", "Indoor/Outdoor"],
+            description: "High-precision surveillance with ultra-clear video and enhanced depth. Blends easily into any environment.",
+            specifications: "Advanced CMOS Sensor, AHD Output, Up to 30m Night Vision, Auto (ICR), 0 Lux (IR ON), DC 12V, Ceiling/Wall Mounting",
+            badge: "8MP Ultra HD"
+        },
+        {
+            id: 7,
+            name: "Elite ApexGuard PTZ 5 MP",
+            slug: "elite-ptz-5mp",
+            model: "ES-PTZ8990-05MP",
+            category: "ptz-wifi",
+            mrp: 8999,
+            price: 6999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg",
+            features: ["5 MP HD", "30X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 150M"],
+            description: "Heavy-duty 5MP speed dome PTZ camera with 30X optical zoom for long-distance surveillance. Full 360° pan and high-speed tracking for comprehensive coverage.",
+            specifications: "5 MP CMOS Sensor, 30X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 150M, PoE+ / DC 24V, IP66 Weatherproof, -40°C to +70°C",
+            popular: true,
+            badge: "30X Zoom"
+        },
+        {
+            id: 8,
+            name: "Elite PTZ Camera 8 MP",
+            slug: "elite-ptz-8mp",
+            model: "ES-PTZ287531-G008MP",
+            category: "ptz-wifi",
+            mrp: 12999,
+            price: 9999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg",
+            features: ["8 MP 4K Ultra-HD", "25X Optical Zoom", "360° Pan/Tilt", "IR Night Vision 200M"],
+            description: "Professional-grade 8MP (4K) PTZ camera with 25X optical zoom. Designed for large-scale installations requiring maximum detail and extended range.",
+            specifications: "8 MP CMOS Sensor, 25X Optical Zoom, Pan: 360° endless, Tilt: -15° to 90°, IR Distance 200M, PoE+ / DC 24V, IP67 Weatherproof, -40°C to +70°C",
+            badge: "Professional"
+        },
+        {
+            id: 9,
+            name: "Elite WiFi Dome Camera 3 MP",
+            slug: "elite-wifi-dome-3mp",
+            model: "ES-IPC360-3MP",
+            category: "ptz-wifi",
+            mrp: 3999,
+            price: 2999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.36.53.jpeg",
+            features: ["3 MP HD", "360° Panoramic View", "WiFi Connectivity", "Two-Way Audio"],
+            description: "Smart 3MP WiFi dome camera with 360-degree panoramic coverage. Easy wireless setup with two-way audio for home and small office monitoring.",
+            specifications: "3 MP CMOS Sensor, 360° Panoramic, WiFi 2.4GHz, Two-Way Audio, SD Card Slot (up to 128GB), DC 5V, Indoor Use",
+            badge: "WiFi"
+        },
+        {
+            id: 10,
+            name: "Elite SecureBullet Pro 4 MP",
+            slug: "securebullet-pro",
+            model: "ES-CV240-4MP",
+            category: "ptz-wifi",
+            mrp: 4999,
+            price: 3999,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.47.59.jpeg",
+            features: ["4 MP HD", "WiFi + Ethernet", "Smart Motion Detection", "IP66 Weatherproof"],
+            description: "Pro-grade 4MP WiFi bullet camera with dual connectivity options. Advanced smart motion detection with push notifications for reliable security.",
+            specifications: "4 MP CMOS Sensor, 3.6mm Fixed Lens, WiFi 2.4GHz + RJ45, Smart Motion Detection, IR Distance 30M, IP66 Weatherproof, DC 12V, -30°C to +60°C",
+            badge: "Smart Detection"
+        },
+        // === SMART TV ===
+        {
+            id: 101,
+            name: "Elite Smart LED TV",
+            slug: "smart-led-tv",
+            model: "ES-TV-SMART-SERIES",
+            category: "tv",
+            mrp: 18999,
+            price: 8999,
+            image: "assets/images/smart-tv-48-front.jpg",
+            images: [
+                "assets/images/smart-tv-48-front.jpg",
+                "assets/images/smart-tv-48-persp.jpg"
+            ],
+            variants: [
+                {
+                    id: "32",
+                    name: "32 Inch",
+                    image: "assets/images/smart-tv-48-front.jpg",
+                    images: ["assets/images/smart-tv-48-front.jpg", "assets/images/smart-tv-back.jpg"],
+                    price: 8999,
+                    mrp: 18999
+                },
+                {
+                    id: "48",
+                    name: "48 Inch",
+                    image: "assets/images/smart-tv-32-front.jpg",
+                    images: ["assets/images/smart-tv-32-front.jpg", "assets/images/smart-tv-48-persp.jpg"],
+                    price: 24999,
+                    mrp: 45999
+                }
+            ],
+            features: ["HD Ready / Full HD", "Android OS", "20W Sound", "Netflix/Prime/Hotstar"],
+            description: "Our company is the most reputed manufacturer, exporter and supplier of 32 inch TV to customers. Elegant design and durable, this TV is designed and manufactured by experienced professional with innovative technique and quality components in line with industry standards. We offer this TV at the most reasonable prices.<br><br>We also offer manufacturing under the customer's brand.",
+            specifications: "Supported Apps: Netflix|Prime Video|Disney+Hotstar|Youtube, Operating System: Android Based, Resolution: HD Ready 1366 x 768 Pixels (32\") / Full HD (48\"), Sound Output: 20 W, Refresh Rate: 60 Hz, Warranty: 1 Year Pan India",
+            popular: true,
+            badge: "Best Seller"
+        },
+        // === IP CAMERAS ===
+        {
+            id: 30,
+            name: "2.5 MP Dome IP Camera",
+            slug: "2-5mp-dome-ip",
+            model: "ES-LNC-DI2MP-ZI02",
+            category: "ip",
+            mrp: 2999,
+            price: 1800,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.42.jpeg",
+            features: ["2.5 MP HD", "PoE / DC 12V", "IR Night Vision 30M", "H.265 Compression"],
+            description: "Compact 2.5MP dome IP camera with clear HD video output. Ideal for indoor monitoring with discreet design and reliable network connectivity.",
+            specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C",
+            badge: "IP Camera"
+        },
+        {
+            id: 16,
+            name: "5 MP Dome IP Camera",
+            slug: "5mp-dome-ip",
+            model: "ES-LNC-DI5MP-ZI05",
+            category: "ip",
+            mrp: 3299,
+            price: 2499,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.26.jpeg",
+            features: ["5 MP Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+            description: "High-resolution 5MP dome IP camera delivering crystal-clear footage. Enhanced compression for efficient storage and smooth streaming.",
+            specifications: "5 MP CMOS Sensor, 2.8mm/3.6mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
+            badge: "5MP HD"
+        },
+        {
+            id: 31,
+            name: "5 MP Bullet IP Camera",
+            slug: "5mp-bullet-ip",
+            model: "ES-LNC-BI5MP-QI05",
+            category: "ip",
+            mrp: 3299,
+            price: 2499,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 18.39.53.jpeg",
+            features: ["5 MP Ultra-HD", "Long Range IR 40M", "Weatherproof IP67", "H.265+"],
+            description: "Robust 5MP outdoor bullet IP camera engineered for demanding environments. High-performance IR LEDs provide clear night vision up to 40 meters.",
+            specifications: "5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 40M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
+            badge: "5MP"
+        },
+        {
+            id: 17,
+            name: "2.5 MP Bullet IP Camera",
+            slug: "2-5mp-bullet-ip",
+            model: "ES-LNC-BI2MP-QI02",
+            category: "ip",
+            mrp: 2499,
+            price: 1899,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.05.13.jpeg",
+            features: ["2.5 MP HD", "PoE Enabled", "IR Night Vision 30M", "H.265"],
+            description: "Durable 2.5MP bullet IP camera suitable for outdoor installations. Weatherproof design with reliable PoE connectivity for easy deployment.",
+            specifications: "2.5 MP CMOS Sensor, 3.6mm Fixed Lens, H.265/H.264, IR Distance 30M, PoE (802.3af) / DC 12V, IP66 Weatherproof, -30°C to +60°C"
+        },
+        {
+            id: 32,
+            name: "8 MP Dome IP Camera",
+            slug: "8mp-dome-ip",
+            model: "ES-LNC-DI8MP-ZI08",
+            category: "ip",
+            mrp: 4499,
+            price: 3499,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.08.jpeg",
+            features: ["8 MP 4K Ultra-HD", "Smart IR 30M", "H.265+", "PoE Enabled"],
+            description: "Premium 8MP (4K) dome IP camera for superior detail and clarity. Advanced smart IR technology ensures optimal night vision without overexposure.",
+            specifications: "8 MP CMOS Sensor, 2.8mm Fixed Lens, H.265+/H.264, Smart IR 30M, PoE (802.3af) / DC 12V, IP67, -30°C to +60°C",
+            badge: "4K Ultra HD"
+        },
+        {
+            id: 33,
+            name: "8 MP Bullet IP Camera",
+            slug: "8mp-bullet-ip",
+            model: "ES-LNC-BI8MP-QI08",
+            category: "ip",
+            mrp: 4699,
+            price: 3699,
+            image: "assets/New_Images/WhatsApp Image 2026-01-13 at 19.07.15.jpeg",
+            features: ["8 MP 4K Ultra-HD", "Long Range IR 50M", "Weatherproof IP67", "H.265+"],
+            description: "Top-tier 8MP (4K) bullet IP camera for professional-grade surveillance. Extended IR range up to 50 meters for expansive outdoor coverage.",
+            specifications: "8 MP CMOS Sensor, 3.6mm Fixed Lens, H.265+/H.264, IR Distance 50M, PoE (802.3af) / DC 12V, IP67 Weatherproof, Metal Housing, -30°C to +60°C",
+            popular: true,
+            badge: "4K Ultra HD"
+        },
+        {
+            id: 19,
+            name: "Elite 4 Channel DVR",
+            slug: "4-channel-dvr",
+            model: "ES-UVR-004CH-ZQS",
+            category: "dvr",
+            mrp: 4999,
+            price: 3999,
+            image: "assets/images/dvr-elite.jpeg",
+            features: ["4 Analog Channels", "HD Recording", "Easy Interface", "HDMI/VGA Output"],
+            description: "Reliable solution for small surveillance setups like homes, shops, and offices.",
+            specifications: "BNC Input, H.264/H.265 Compression, 1 SATA HDD Support, HDMI/VGA, USB Ports, RJ45 Ethernet, DC 12V",
+            popular: true,
+            badge: "4 Channel"
+        },
+        {
+            id: 20,
+            name: "Elite 8 Channel DVR",
+            slug: "8-channel-dvr",
+            model: "ES-UVR-008CH-ZQS01",
+            category: "dvr",
+            mrp: 6999,
+            price: 5499,
+            image: "assets/images/dvr-elite.jpeg",
+            features: ["8 HD Analog Channels", "Multi-channel Playback", "Optimized Compression", "Advanced Search"],
+            description: "Designed for retail spaces, warehouses, and residential complexes requiring extended coverage.",
+            specifications: "HD/Full HD Recording, 1 SATA HDD (high capacity), HDMI/VGA, 2x USB, RJ45, Remote Access via App",
+            badge: "8 Channel"
+        },
+        {
+            id: 21,
+            name: "Elite 16 Channel DVR",
+            slug: "16-channel-dvr",
+            model: "ES-UVR-0016CH-ZQS02",
+            category: "dvr",
+            mrp: 9999,
+            price: 7999,
+            image: "assets/images/dvr-elite.jpeg",
+            features: ["16 HD Cameras", "Real-time Recording", "Smart Search", "High-capacity Storage"],
+            description: "High-capacity solution for large-scale installations like commercial buildings and factories.",
+            specifications: "HD/Full HD Recording, 2 SATA HDD Support, HDMI/VGA, 2x USB, RJ45, Remote Access via CMS/App",
+            badge: "16 Channel"
+        },
+        {
+            id: 22,
+            name: "Elite 32 Channel DVR",
+            slug: "32-channel-dvr",
+            model: "ES-UVR-0032CH-ZQS03",
+            category: "dvr",
+            mrp: 14999,
+            price: 11999,
+            image: "assets/images/dvr-elite.jpeg",
+            features: ["32 HD Channels", "Powerful Processing", "Smart Search", "Enterprise Security"],
+            description: "High-performance system for campuses, malls, and enterprise environments.",
+            specifications: "HD/Full HD Recording, 2/4 SATA HDD Support, HDMI/VGA, Multiple USB Ports, RJ45, Remote Access via CMS/App, DC 12V",
+            badge: "32 Channel"
+        },
+        // === NVR SYSTEMS ===
+        {
+            id: 40,
+            name: "Elite 4 Channel NVR",
+            slug: "4-channel-nvr",
+            model: "ES-LNC-NVR04-PI04",
+            category: "nvr",
+            mrp: 5999,
+            price: 4499,
+            image: "assets/images/nvr-front.jpeg",
+            features: ["4 IP Channels", "4K Recording", "H.265+", "PoE Ports"],
+            description: "Compact 4-channel NVR with built-in PoE ports for easy IP camera installation. Supports 4K recording with H.265+ compression.",
+            specifications: "4 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 1 SATA HDD (up to 8TB), 4 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            popular: true,
+            badge: "4 Channel"
+        },
+        {
+            id: 41,
+            name: "Elite 8 Channel NVR",
+            slug: "8-channel-nvr",
+            model: "ES-LNC-NVR08-PI08",
+            category: "nvr",
+            mrp: 8999,
+            price: 6999,
+            image: "assets/images/nvr-front.jpeg",
+            features: ["8 IP Channels", "4K Recording", "H.265+", "8 PoE Ports"],
+            description: "Professional 8-channel NVR with 8 built-in PoE ports. Ideal for medium-sized installations with advanced recording features.",
+            specifications: "8 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 16TB), 8 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            badge: "8 Channel"
+        },
+        {
+            id: 42,
+            name: "Elite 16 Channel NVR",
+            slug: "16-channel-nvr",
+            model: "ES-LNC-NVR16-PI16",
+            category: "nvr",
+            mrp: 14999,
+            price: 11999,
+            image: "assets/images/nvr-front.jpeg",
+            features: ["16 IP Channels", "4K Recording", "H.265+", "16 PoE Ports"],
+            description: "High-capacity 16-channel NVR with 16 PoE ports for large installations. Supports dual SATA HDDs for extended storage.",
+            specifications: "16 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 2 SATA HDD (up to 20TB), 16 PoE Ports, HDMI/VGA Output, RJ45 Ethernet, DC 48V",
+            badge: "16 Channel"
+        },
+        {
+            id: 43,
+            name: "Elite 32 Channel NVR",
+            slug: "32-channel-nvr",
+            model: "ES-LNC-NVR32-PI32",
+            category: "nvr",
+            mrp: 24999,
+            price: 19999,
+            image: "assets/images/nvr-front.jpeg",
+            features: ["32 IP Channels", "4K Recording", "H.265+", "Enterprise Grade"],
+            description: "Enterprise-grade 32-channel NVR for large-scale surveillance. Supports multiple HDDs and remote management.",
+            specifications: "32 IP Camera Inputs, 4K/8MP Recording, H.265+/H.264, 4 SATA HDD (up to 40TB), HDMI/VGA Output, RJ45 Ethernet, DC 12V/AC 100-240V",
+            popular: true,
+            badge: "32 Channel"
+        },
+        // === POE SWITCHES ===
+        {
+            id: 23,
+            name: "Elite 4 Port POE Switch",
+            slug: "4-port-poe",
+            model: "ES-POE3690LIP04",
+            category: "poe",
+            mrp: 2999,
+            price: 2399,
+            image: "assets/images/poe-switch-4port.png",
+            features: ["4 POE Ports", "60W Total Power", "Gigabit Speed", "Plug & Play"],
+            description: "Compact 4-port PoE switch ideal for small IP camera installations. Delivers up to 60W total power with Gigabit speeds.",
+            specifications: "4 PoE Ports (IEEE 802.3af/at), 60W Total Power Budget, 2 Uplink Ports, 10/100/1000Mbps, Plug & Play, Metal Housing",
+            badge: "4 Port"
+        },
+        {
+            id: 24,
+            name: "Elite 8 Port POE Switch",
+            slug: "8-port-poe",
+            model: "ES-POE2580LIP08",
+            category: "poe",
+            mrp: 4999,
+            price: 3999,
+            image: "assets/images/poe-switch-8port.png",
+            features: ["8 POE Ports", "120W Total Power", "Gigabit Speed", "2 Uplink Ports"],
+            description: "Professional 8-port PoE switch with 120W power budget for medium installations. Features 2 Gigabit uplink ports for network expansion.",
+            specifications: "8 PoE Ports (IEEE 802.3af/at), 120W Total Power Budget, 2 Gigabit Uplink Ports, 10/100/1000Mbps, LED Indicators, Rack Mountable",
+            popular: true,
+            badge: "8 Port"
+        },
+        {
+            id: 25,
+            name: "Elite 16 Port POE Switch",
+            slug: "16-port-poe",
+            model: "ES-POE1470LIP016",
+            category: "poe",
+            mrp: 8999,
+            price: 6999,
+            image: "assets/images/poe-switch-16port.png",
+            features: ["16 POE Ports", "250W Total Power", "Gigabit Speed", "Rack Mountable"],
+            description: "High-power 16-port PoE switch with 250W power budget for large installations. Rack mountable design for professional deployment.",
+            specifications: "16 PoE Ports (IEEE 802.3af/at), 250W Total Power Budget, 2 SFP Uplink Ports, 10/100/1000Mbps, 19-inch Rack Mount, Metal Chassis",
+            badge: "16 Port"
+        },
+        {
+            id: 26,
+            name: "Elite 43\" OptimaX QLED Smart TV",
+            slug: "43-qled-smart-tv",
+            model: "ES-TV43-QLED-OX",
+            category: "tv",
+            mrp: 29999,
+            price: 22999,
+            image: "assets/images/tv-43-qled-main.jpg",
+            features: ["43\" 4K QLED Display", "Android TV 11", "Quad Core Processor", "Smart Remote with Voice"],
+            description: "Experience stunning visuals with the Elite 43\" OptimaX QLED Smart TV. Powered by Quantum Dot LED technology for enhanced color volume and vibrancy. Features 4K Ultra HD resolution with HDR10+ support for lifelike picture quality. Built-in Android TV provides access to Netflix, Prime Video, Disney+, YouTube, and thousands of apps. Smart voice control with Google Assistant for hands-free operation.<br><br>We also offer manufacturing under the customer's brand.",
+            specifications: "Display: 43\" QLED 4K (3840x2160), Panel: Quantum Dot LED, HDR: HDR10+/HLG, Refresh Rate: 60Hz, Processor: Quad Core A55, OS: Android TV 11, RAM: 2GB DDR4, Storage: 16GB, Sound: 24W (2x12W) Dolby Audio, WiFi: Dual Band 2.4G+5G, Bluetooth: v5.0, HDMI: 3 Ports (1x HDMI 2.1), USB: 2 Ports, Smart Features: Chromecast Built-in|Voice Control|Screen Mirroring, Warranty: 1 Year Pan India",
+            popular: true,
+            badge: "New Arrival"
+        }
+    ]
+};
+
+// =====================================================
+// UTILITY FUNCTIONS
+// =====================================================
+
+// Format price to INR
+function formatPrice(price) {
+    return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        minimumFractionDigits: 0
+    }).format(price);
+}
+
+// Generate product slug for URL
+function generateSlug(name) {
+    return name.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+// Get products by category
+function getProductsByCategory(categoryId) {
+    return productsData.products.filter(p => p.category === categoryId);
+}
+
+// Get popular products
+function getPopularProducts() {
+    return productsData.products.filter(p => p.popular);
+}
+
+// Get product by slug
+function getProductBySlug(slug) {
+    return productsData.products.find(p => p.slug === slug);
+}
+
+// Get product by ID
+function getProductById(id) {
+    return productsData.products.find(p => p.id === id);
+}
+
+// Get category by ID
+function getCategoryById(categoryId) {
+    return productsData.categories.find(c => c.id === categoryId);
+}
+
+// Get related products (same category, different product)
+function getRelatedProducts(productId, limit = 4) {
+    const product = getProductById(productId);
+    if (!product) return [];
+    return productsData.products
+        .filter(p => p.category === product.category && p.id !== productId)
+        .slice(0, limit);
+}
+
+// WhatsApp URL generator
+function getWhatsAppUrl(productName, modelNumber) {
+    const message = encodeURIComponent(`Hi, I'm interested in ${productName} (${modelNumber}). Please share more details.`);
+    return `https://wa.me/919548323302?text=${message}`;
+}
+
+// =====================================================
+// PRODUCT CARD GENERATOR
+// =====================================================
+
+function createProductCard(product, basePath = '') {
+    const categoryInfo = getCategoryById(product.category);
+    const productUrl = `${basePath}products/${product.slug}.html`;
+    const whatsappUrl = getWhatsAppUrl(product.name, product.model);
+
+    return `
+        <article class="product-card">
+            <div class="product-image">
+                ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                <img src="${basePath}${product.image}" alt="${product.name}" loading="lazy">
+                <div class="product-actions">
+                    <a href="${whatsappUrl}" target="_blank" class="product-action-btn" title="Buy on WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        </svg>
+                    </a>
+                    <a href="${productUrl}" class="product-action-btn" title="View Details">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">${categoryInfo ? categoryInfo.name : ''}</span>
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-desc">${product.model} • ${product.features.slice(0, 2).join(' • ')}</p>
+                <div class="product-price">
+                    <a href="${whatsappUrl}" target="_blank" class="price-contact">💬 Contact for Price</a>
+                </div>
+                <div class="product-cta">
+                    <a href="${whatsappUrl}" target="_blank" class="btn btn-whatsapp" style="padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm);">
+                        Buy on WhatsApp
+                    </a>
+                    <a href="${productUrl}" class="btn btn-outline" style="padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm);">
+                        View
+                    </a>
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+// =====================================================
+// HERO SLIDER
+// =====================================================
+
+function initHeroSlider() {
+    const slider = document.getElementById('heroSlider');
     if (!slider) return;
 
     const slidesContainer = slider.querySelector('.slides-container');
     const slides = slider.querySelectorAll('.slide');
     const dots = slider.querySelectorAll('.slider-dot');
-    const prevBtn = slider.querySelector('.slider-arrow--prev');
-    const nextBtn = slider.querySelector('.slider-arrow--next');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
 
     let currentSlide = 0;
-    let autoPlayInterval;
+    let autoSlideInterval;
     const slideCount = slides.length;
-    const autoPlayDelay = 5000; // 5 seconds
 
-    // Update slider position
     function goToSlide(index) {
         if (index < 0) index = slideCount - 1;
         if (index >= slideCount) index = 0;
@@ -48,543 +602,448 @@ function initSlider() {
         });
     }
 
-    // Next slide
     function nextSlide() {
         goToSlide(currentSlide + 1);
     }
 
-    // Previous slide
     function prevSlide() {
         goToSlide(currentSlide - 1);
     }
 
-    // Start autoplay
-    function startAutoPlay() {
-        stopAutoPlay();
-        autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
     }
 
-    // Stop autoplay
-    function stopAutoPlay() {
-        if (autoPlayInterval) {
-            clearInterval(autoPlayInterval);
-        }
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
     }
 
     // Event listeners
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-        prevSlide();
-        startAutoPlay();
-    });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); stopAutoSlide(); startAutoSlide(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); stopAutoSlide(); startAutoSlide(); });
 
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-        nextSlide();
-        startAutoPlay();
-    });
-
-    dots.forEach((dot, index) => {
+    dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
-            goToSlide(index);
-            startAutoPlay();
+            goToSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
         });
     });
 
+    // Start auto-slide
+    startAutoSlide();
+
     // Pause on hover
-    slider.addEventListener('mouseenter', stopAutoPlay);
-    slider.addEventListener('mouseleave', startAutoPlay);
+    slider.addEventListener('mouseenter', stopAutoSlide);
+    slider.addEventListener('mouseleave', startAutoSlide);
+}
 
-    // Touch support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
+// =====================================================
+// POPULAR PRODUCTS CAROUSEL
+// =====================================================
 
-    slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoPlay();
-    }, { passive: true });
+function initPopularCarousel() {
+    const carousel = document.getElementById('popularCarousel');
+    if (!carousel) return;
 
-    slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        startAutoPlay();
-    }, { passive: true });
+    const popularProducts = getPopularProducts();
 
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
+    // Render products
+    carousel.innerHTML = popularProducts.map(product => `
+        <div class="carousel-item">
+            ${createProductCard(product)}
+        </div>
+    `).join('');
 
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
+    // Carousel navigation
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let scrollPosition = 0;
+    const itemWidth = 296; // 280px + 16px gap
+    const visibleItems = Math.floor(carousel.parentElement.offsetWidth / itemWidth);
+    const maxScroll = (popularProducts.length - visibleItems) * itemWidth;
+
+    function scrollCarousel(direction) {
+        scrollPosition += direction * itemWidth * 2;
+        scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+        carousel.style.transform = `translateX(-${scrollPosition}px)`;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollCarousel(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollCarousel(1));
+}
+
+// =====================================================
+// FEATURED PRODUCTS
+// =====================================================
+
+function initFeaturedProducts() {
+    const container = document.getElementById('featuredProducts');
+    if (!container) return;
+
+    // Get first 8 products for featured section
+    const featuredProducts = productsData.products.slice(0, 8);
+    container.innerHTML = featuredProducts.map(product => createProductCard(product)).join('');
+}
+
+// =====================================================
+// SHOP PAGE PRODUCTS
+// =====================================================
+
+function initShopProducts() {
+    const container = document.getElementById('shopProducts');
+    if (!container) return;
+
+    // Get filters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFilter = urlParams.get('category');
+    const searchQuery = urlParams.get('search');
+
+    let products = productsData.products;
+
+    // Apply category filter
+    if (categoryFilter) {
+        products = getProductsByCategory(categoryFilter);
+    }
+
+    // Apply search filter
+    if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        products = products.filter(p =>
+            p.name.toLowerCase().includes(query) ||
+            p.model.toLowerCase().includes(query) ||
+            p.features.some(f => f.toLowerCase().includes(query)) ||
+            (getCategoryById(p.category)?.name || '').toLowerCase().includes(query)
+        );
+
+        // Show search results message
+        if (products.length === 0) {
+            container.innerHTML = `<div style="text-align: center; padding: 3rem; grid-column: 1/-1;"><h3>No products found for "${searchQuery}"</h3><p>Try a different search term or <a href="shop.html">browse all products</a></p></div>`;
+            return;
         }
     }
 
-    // Initialize
-    goToSlide(0);
-    startAutoPlay();
+    container.innerHTML = products.map(product => createProductCard(product)).join('');
+
+    // Category filter tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            let filtered = productsData.products;
+            if (category && category !== 'all') {
+                filtered = getProductsByCategory(category);
+            }
+
+            // Also apply search filter if present
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(query) ||
+                    p.model.toLowerCase().includes(query) ||
+                    p.features.some(f => f.toLowerCase().includes(query))
+                );
+            }
+
+            container.innerHTML = filtered.map(product => createProductCard(product)).join('');
+        });
+    });
 }
 
-// ===================================
-// Mobile Menu Toggle
-// ===================================
+// =====================================================
+// CATEGORY PAGE PRODUCTS
+// =====================================================
+
+function initCategoryProducts() {
+    const container = document.getElementById('categoryProducts');
+    if (!container) return;
+
+    const categoryId = container.dataset.category;
+    const products = getProductsByCategory(categoryId);
+
+    container.innerHTML = products.map(product => createProductCard(product, '../')).join('');
+}
+
+// =====================================================
+// PRODUCT PAGE
+// =====================================================
+
+function initProductPage() {
+    const productDetails = document.getElementById('productDetails');
+    if (!productDetails) return;
+
+    const productSlug = productDetails.dataset.slug;
+    const product = getProductBySlug(productSlug);
+
+    if (!product) {
+        productDetails.innerHTML = '<p>Product not found.</p>';
+        return;
+    }
+
+    const categoryInfo = getCategoryById(product.category);
+    const whatsappUrl = getWhatsAppUrl(product.name, product.model);
+    const relatedProducts = getRelatedProducts(product.id);
+
+    // Update page title
+    document.title = `${product.name} - Elite Solution`;
+
+    // Render product details
+    productDetails.innerHTML = `
+        <div class="product-page-grid">
+            <div class="product-gallery">
+                <div class="product-main-image">
+                    <img src="../${product.image}" alt="${product.name}">
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="product-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../categories/${product.category === 'ptz-wifi' ? 'ptz-wifi' : product.category.replace('-', '-')}.html">${categoryInfo ? categoryInfo.name : ''}</a>
+                    <span>/</span>
+                    <span>${product.name}</span>
+                </div>
+                
+                <h1 class="product-page-title">${product.name}</h1>
+                <p class="product-model">Model: <span id="productModel">${product.model}</span></p>
+                
+                ${product.variants ? `
+                    <div class="product-variants" style="margin-bottom: var(--space-lg);">
+                        <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-sm);">Size:</h4>
+                        <div class="variant-options" style="display: flex; gap: var(--space-sm);">
+                            ${product.variants.map((v, index) => `
+                                <button class="variant-btn ${index === 0 ? 'active' : ''}" 
+                                        data-id="${v.id}"
+                                        data-image="${v.image}"
+                                        data-price="${v.price}"
+                                        data-mrp="${v.mrp}"
+                                        data-name="${v.name}"
+                                        data-images='${JSON.stringify(v.images || [v.image])}'
+                                        onclick="selectVariant(this)"
+                                        style="padding: 8px 16px; border: 2px solid var(--color-bg-alt); background: transparent; border-radius: var(--radius-md); cursor: pointer; font-weight: 500; transition: all 0.2s;">
+                                    ${v.name}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                ${product.description ? `<p class="product-description-text" style="color:var(--color-text-light); margin-bottom:var(--space-md); line-height:1.6;">${product.description}</p>` : ''}
+                
+                <div class="product-features">
+                    <h4>Features</h4>
+                    <div class="features-list">
+                        ${product.features.map(feature => `
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>${feature}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                ${product.specifications ? `
+                <div class="product-specifications" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
+                    <h4 style="margin-bottom: var(--space-sm);">Specifications</h4>
+                    <ul class="specs-list" style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-light);">
+                        ${product.specifications.split(',').map(spec => `<li style="margin-bottom: 0.5rem;">${spec.trim()}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+                
+                <div class="product-price" style="margin-bottom: var(--space-xl);">
+                    <a id="whatsappBtn" href="${whatsappUrl}" target="_blank" class="price-contact">💬 Contact for Price</a>
+                </div>
+                
+                <div class="product-cta-section">
+                    <a id="buyBtn" href="${whatsappUrl}" target="_blank" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1rem; padding: 1rem 2rem;">
+                         Buy on WhatsApp
+                    </a>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light);">
+                        📞 +91 95483 23302
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        ${relatedProducts.length > 0 ? `
+            <div class="related-products">
+                <h2 class="section-title">Related Products</h2>
+                <div class="products-grid">
+                    ${relatedProducts.map(p => createProductCard(p, '../')).join('')}
+                </div>
+            </div>
+        ` : ''}
+    `;
+
+    // Initialize Images
+    let currentImages = product.variants ? (product.variants[0].images || [product.image]) : (product.images || [product.image]);
+    updateGallery(currentImages);
+
+    // Initial Variant State
+    if (product.variants) {
+        window.selectedVariant = product.variants[0];
+    }
+}
+
+function updateGallery(images) {
+    const galleryContainer = document.querySelector('.product-gallery');
+    if (!galleryContainer) return;
+
+    // Only rebuild if meaningful change, but strictly normally we replace content.
+    // Simple gallery: Main Image + Thumbnails (if > 1)
+
+    galleryContainer.innerHTML = `
+        <div class="product-main-image">
+            <img id="mainImage" src="../${images[0]}" alt="Product Image">
+        </div>
+        ${images.length > 1 ? `
+        <div class="product-thumbnails" style="display: flex; gap: 10px; margin-top: 10px;">
+            ${images.map((img, idx) => `
+                <div class="thumbnail" onclick="switchMainImage('${img}')" style="width: 60px; height: 60px; border-radius: 8px; overflow: hidden; curor: pointer; border: 2px solid transparent;">
+                    <img src="../${img}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            `).join('')}
+        </div>
+        ` : ''}
+    `;
+}
+
+window.switchMainImage = function (src) {
+    const mainImg = document.getElementById('mainImage');
+    if (mainImg) mainImg.src = "../" + src;
+}
+
+window.selectVariant = function (btn) {
+    // Styling
+    document.querySelectorAll('.variant-btn').forEach(b => {
+        b.style.borderColor = 'var(--color-bg-alt)';
+        b.style.color = 'var(--color-text)';
+    });
+    btn.style.borderColor = 'var(--color-secondary)';
+    btn.style.color = 'var(--color-secondary)';
+
+    // Data
+    const image = btn.dataset.image;
+    const name = btn.dataset.name;
+    const images = JSON.parse(btn.dataset.images);
+
+    // Update Gallery
+    updateGallery(images);
+
+    // Update Links
+    const productDetails = document.getElementById('productDetails');
+    const productSlug = productDetails.dataset.slug;
+    const product = getProductBySlug(productSlug);
+
+    const message = `Hi, I'm interested in ${product.name} (Size: ${name}). Please share more details.`;
+    const url = `https://wa.me/919548323302?text=${encodeURIComponent(message)}`;
+
+    document.getElementById('whatsappBtn').href = url;
+    document.getElementById('buyBtn').href = url;
+}
+
+// =====================================================
+// MOBILE MENU
+// =====================================================
+
 function initMobileMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-menu .nav-link');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
 
     if (!menuToggle || !mobileMenu) return;
 
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
     // Close menu when clicking a link
-    mobileLinks.forEach(link => {
+    mobileMenu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
-
-// ===================================
-// Product Category Tabs
-// ===================================
-function initTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    if (tabButtons.length === 0) return;
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-
-            // Update active button
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // Show corresponding content
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.getAttribute('data-tab') === targetTab) {
-                    content.classList.add('active');
-                    // Animate cards
-                    const cards = content.querySelectorAll('.product-card');
-                    cards.forEach((card, index) => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.transition = 'all 0.3s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }
-            });
         });
     });
 }
 
-// ===================================
-// Blog Pagination
-// ===================================
-function initPagination() {
-    const pageButtons = document.querySelectorAll('.page-btn');
-    const blogGrid = document.querySelector('.blog-grid');
+// =====================================================
+// HEADER SCROLL
+// =====================================================
 
-    if (pageButtons.length === 0) return;
-
-    // Sample blog data for simulation
-    const blogData = [
-        {
-            title: "Why You Don't Need Professional Security Camera Installation",
-            excerpt: "Learn how to install your security cameras like a pro. Our comprehensive guide walks you through every step.",
-            image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=250&fit=crop",
-            date: "Jan 10, 2026",
-            author: "Admin"
-        },
-        {
-            title: "Different types of Security Cameras and when to use them",
-            excerpt: "Explore the various types of security cameras available and find the perfect match for your needs.",
-            image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400&h=250&fit=crop",
-            date: "Jan 8, 2026",
-            author: "Admin"
-        },
-        {
-            title: "आधुनिक सीसीटीवी सिस्टम से भारत को सुरक्षित बना रहा है",
-            titleClass: "hindi",
-            excerpt: "जानिए कैसे आधुनिक सीसीटीवी तकनीक भारत में सुरक्षा को बेहतर बना रही है।",
-            image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=250&fit=crop",
-            date: "Jan 5, 2026",
-            author: "Admin"
-        }
-    ];
-
-    pageButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active state
-            pageButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // Simulate page change with animation
-            if (blogGrid) {
-                blogGrid.style.opacity = '0';
-                blogGrid.style.transform = 'translateY(20px)';
-
-                setTimeout(() => {
-                    // In a real app, you would fetch new data here
-                    // For demo, we just animate the existing content
-                    blogGrid.style.transition = 'all 0.3s ease';
-                    blogGrid.style.opacity = '1';
-                    blogGrid.style.transform = 'translateY(0)';
-                }, 200);
-            }
-
-            // Scroll to blog section
-            const blogSection = document.querySelector('.blog');
-            if (blogSection) {
-                blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-}
-
-// ===================================
-// Smooth Scroll for Internal Links
-// ===================================
-function initSmoothScroll() {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-
-            // Skip if it's just "#"
-            if (href === '#') return;
-
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                const headerOffset = 70; // Account for fixed header
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// ===================================
-// Chat Support
-// ===================================
-function initChatSupport() {
-    const chatBtn = document.querySelector('.chat-btn');
-    const chatPrompt = document.querySelector('.chat-prompt');
-
-    if (!chatBtn) return;
-
-    chatBtn.addEventListener('click', () => {
-        // In a real app, this would open a chat widget
-        // For demo, we show an alert
-        showChatModal();
-    });
-
-    // Hide prompt after a few seconds
-    if (chatPrompt) {
-        setTimeout(() => {
-            chatPrompt.style.opacity = '0';
-            chatPrompt.style.transform = 'translateY(10px)';
-            setTimeout(() => {
-                chatPrompt.style.display = 'none';
-            }, 300);
-        }, 8000);
-    }
-}
-
-function showChatModal() {
-    // Create modal overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'chat-modal-overlay';
-    overlay.style.cssText = `
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        animation: fadeIn 0.3s ease;
-    `;
-
-    // Create modal content
-    const modal = document.createElement('div');
-    modal.className = 'chat-modal';
-    modal.style.cssText = `
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        max-width: 400px;
-        width: 90%;
-        text-align: center;
-        animation: slideUp 0.3s ease;
-    `;
-
-    modal.innerHTML = `
-        <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
-        <h3 style="margin-bottom: 1rem; color: #0D47A1;">Chat Support</h3>
-        <p style="margin-bottom: 1.5rem; color: #666;">Our support team is available 24/7 to help you with any questions.</p>
-        
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-            <a href="tel:+919548323302" class="btn btn-primary" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
-                Call Us: +91 95483 23302
-            </a>
-            <a href="https://wa.me/919548323302" target="_blank" class="btn btn-whatsapp" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                WhatsApp Chat
-            </a>
-            <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                📧 elitesolutions906@gmail.com
-            </div>
-        </div>
-
-        <button class="close-chat-modal" style="
-            background: #f1f1f1;
-            color: #333;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        ">Close</button>
-    `;
-
-    overlay.appendChild(modal);
-    document.body.appendChild(overlay);
-
-    // Close handlers
-    const closeBtn = modal.querySelector('.close-chat-modal');
-    closeBtn.addEventListener('click', () => {
-        overlay.style.opacity = '0';
-        setTimeout(() => overlay.remove(), 300);
-    });
-
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.style.opacity = '0';
-            setTimeout(() => overlay.remove(), 300);
-        }
-    });
-
-    // Close on escape
-    document.addEventListener('keydown', function closeOnEsc(e) {
-        if (e.key === 'Escape') {
-            overlay.style.opacity = '0';
-            setTimeout(() => overlay.remove(), 300);
-            document.removeEventListener('keydown', closeOnEsc);
-        }
-    });
-}
-
-// ===================================
-// Lazy Loading Images
-// ===================================
-function initLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
-
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    img.classList.remove('lazy-image');
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '50px 0px',
-            threshold: 0.01
-        });
-
-        lazyImages.forEach(img => {
-            imageObserver.observe(img);
-        });
-    } else {
-        // Fallback for browsers without IntersectionObserver
-        lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-        });
-    }
-}
-
-// ===================================
-// Newsletter Form Handler
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
-    const newsletterForm = document.querySelector('.newsletter-form');
-
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = newsletterForm.querySelector('.newsletter-input');
-            const email = input.value.trim();
-
-            if (email && isValidEmail(email)) {
-                // Simulate subscription success
-                input.value = '';
-                showToast('Thank you for subscribing!', 'success');
-            } else {
-                showToast('Please enter a valid email address', 'error');
-            }
-        });
-    }
-});
-
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function showToast(message, type = 'info') {
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.style.cssText = `
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#0D47A1'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 10001;
-        animation: slideUp 0.3s ease;
-        font-weight: 500;
-    `;
-    toast.textContent = message;
-
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(20px)';
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
-
-// ===================================
-// Search Functionality (Demo)
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.querySelector('.search-form');
-
-    if (searchForm) {
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = searchForm.querySelector('.search-input');
-            const query = input.value.trim();
-
-            if (query) {
-                // In a real app, this would navigate to search results
-                showToast(`Searching for: "${query}"`, 'info');
-            }
-        });
-    }
-});
-
-// ===================================
-// Header Scroll Effect
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
-    let lastScroll = 0;
+function initHeaderScroll() {
+    const header = document.getElementById('header');
+    if (!header) return;
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            header.classList.remove('scrolled');
         }
-
-        lastScroll = currentScroll;
-    }, { passive: true });
-});
-
-// ===================================
-// Add to Cart Demo
-// ===================================
-function addToCart(productName, price) {
-    showToast(`${productName} added to cart!`, 'success');
-
-    // Update cart count
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        const currentCount = parseInt(cartCount.textContent) || 0;
-        cartCount.textContent = currentCount + 1;
-
-        // Animate the cart icon
-        cartCount.style.transform = 'scale(1.3)';
-        setTimeout(() => {
-            cartCount.style.transform = 'scale(1)';
-        }, 200);
-    }
+    });
 }
 
-// Make addToCart available globally
-window.addToCart = addToCart;
+// =====================================================
+// SEARCH FUNCTIONALITY
+// =====================================================
 
-function buyViaWhatsapp(productName) {
-    const phoneNumber = "919548323302";
-    const text = encodeURIComponent(`Hi, I am interested in buying *${productName}*. Please let me know the details.`);
-    const url = `https://wa.me/${phoneNumber}?text=${text}`;
-    window.open(url, '_blank');
+function initSearch() {
+    const searchForm = document.querySelector('.search-form');
+    if (!searchForm) return;
+
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const searchInput = searchForm.querySelector('.search-input');
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query) {
+            // Redirect to shop page with search query
+            window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
+        }
+    });
 }
-window.buyViaWhatsapp = buyViaWhatsapp;
+
+// =====================================================
+// CONTACT FORM
+// =====================================================
 
 function handleContactSubmit(event) {
     event.preventDefault();
+
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
     const requirement = document.getElementById('requirement').value;
 
-    // Simulate successful submission
-    showToast(`Thank you ${name}! We have received your requirement.`, 'success');
+    // Create WhatsApp message
+    const message = `New Inquiry from Website:%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0A%0ARequirement:%0A${requirement}`;
 
-    // Construct WhatsApp message URL for immediate action (optional feature)
-    const text = encodeURIComponent(`*New Requirement*\nName: ${name}\nPhone: ${phone}\nRequirement: ${requirement}`);
-
-    // Reset form
-    document.getElementById('contactForm').reset();
-
-    // Optional: Open WhatsApp with the requirement
-    setTimeout(() => {
-        if (confirm("Would you like to send this requirement via WhatsApp as well?")) {
-            window.open(`https://wa.me/919548323302?text=${text}`, '_blank');
-        }
-    }, 1500);
+    // Open WhatsApp
+    window.open(`https://wa.me/919548323302?text=${message}`, '_blank');
 }
+
+// =====================================================
+// INITIALIZE
+// =====================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initPopularCarousel();
+    initFeaturedProducts();
+    initShopProducts();
+    initCategoryProducts();
+    initProductPage();
+    initMobileMenu();
+    initHeaderScroll();
+    initSearch();
+});
+
+// Make functions globally available
 window.handleContactSubmit = handleContactSubmit;
+window.productsData = productsData;

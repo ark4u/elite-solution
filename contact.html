@@ -5,332 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Elite Solution</title>
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .contact-hero {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.9) 0%, rgba(13, 71, 161, 0.7) 100%), url('https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=1920&h=600&fit=crop');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-top: var(--header-height);
-        }
-
-        .contact-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .contact-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(13, 71, 161, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--color-primary);
-        }
-
-        .contact-icon svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        .contact-form-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-            margin-top: 3rem;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        @media (max-width: 768px) {
-            .contact-info-grid {
-                grid-template-columns: 1fr;
-                margin-top: 2rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header" id="header">
         <div class="header-container">
-            <a href="index.html" class="logo" aria-label="Elite Solution Home">
-                <img src="assets/images/logo.png" alt="Elite Solution Logo" width="50" height="50">
-                <span class="logo-text">Elite Solution</span>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Elite Solution Logo">
+                <span class="logo-text">Elite <span>Solution</span></span>
             </a>
-
-            <nav class="nav" role="navigation">
+            <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#products" class="nav-link">Shop</a></li>
-                    <li><a href="index.html#collections" class="nav-link">Collections</a></li>
-                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="index.html#categories" class="nav-link">Categories</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
             </nav>
-
             <div class="header-actions">
-                <button class="menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
             </div>
         </div>
     </header>
-
-    <!-- Mobile Menu -->
-    <nav class="mobile-menu" role="navigation">
+    <nav class="mobile-menu" id="mobileMenu">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="index.html#products" class="nav-link">Shop</a></li>
-            <li><a href="index.html#collections" class="nav-link">Collections</a></li>
-            <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
             <li><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
     </nav>
-
     <main>
-        <!-- Hero Section -->
-        <section class="contact-hero">
+        <section class="category-hero">
             <div class="container">
                 <h1>Contact Us</h1>
                 <p>We're here to help with your security needs</p>
             </div>
         </section>
-
-        <!-- Contact Info -->
-        <div class="container">
-            <div class="contact-info-grid">
-                <a href="tel:+919548323302" class="contact-info-card" style="text-decoration: none; color: inherit;">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-                        </svg>
-                    </div>
-                    <h3>Call Us</h3>
-                    <p>+91 95483 23302</p>
-                    <small>Available 24/7</small>
-                </a>
-
-                <a href="mailto:elitesolutions906@gmail.com" class="contact-info-card"
-                    style="text-decoration: none; color: inherit;">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                    </div>
-                    <h3>Email Us</h3>
-                    <p>elitesolutions906@gmail.com</p>
-                    <small>We reply within 24 hours</small>
-                </a>
-
-                <a href="https://wa.me/919548323302" target="_blank" class="contact-info-card"
-                    style="text-decoration: none; color: inherit;">
-                    <div class="contact-icon" style="color: #25D366; background: rgba(37, 211, 102, 0.1);">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                        </svg>
-                    </div>
-                    <h3>WhatsApp Us</h3>
-                    <p>+91 95483 23302</p>
-                    <small>Chat with us instantly</small>
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <section class="contact-form-section">
+        <section class="section">
             <div class="container">
-                <div class="section-title">
-                    <h2>Send us your Requirement</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-bottom: var(--space-3xl);">
+                    <a href="tel:+919548323302"
+                        style="text-decoration: none; color: inherit; background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center; transition: all var(--transition-base);">
+                        <div
+                            style="width: 60px; height: 60px; background: rgba(20, 184, 166, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem;">
+                            📞</div>
+                        <h3>Call Us</h3>
+                        <p style="color: var(--color-text-light);">+91 95483 23302</p>
+                    </a>
+                    <a href="mailto:elitesolutions906@gmail.com"
+                        style="text-decoration: none; color: inherit; background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: rgba(20, 184, 166, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem;">
+                            📧</div>
+                        <h3>Email Us</h3>
+                        <p style="color: var(--color-text-light);">elitesolutions906@gmail.com</p>
+                    </a>
+                    <a href="https://wa.me/919548323302" target="_blank"
+                        style="text-decoration: none; color: inherit; background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: rgba(37, 211, 102, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem;">
+                            💬</div>
+                        <h3>WhatsApp</h3>
+                        <p style="color: var(--color-text-light);">Chat with us instantly</p>
+                    </a>
                 </div>
-                <div class="form-container">
+                <div
+                    style="max-width: 600px; margin: 0 auto; background: var(--color-bg-alt); padding: var(--space-2xl); border-radius: var(--radius-xl);">
+                    <h2 style="text-align: center; margin-bottom: var(--space-xl);">Send Your Requirement</h2>
                     <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required placeholder="Enter your name">
+                        <div style="margin-bottom: var(--space-lg);">
+                            <label style="display: block; margin-bottom: var(--space-sm); font-weight: 500;">Your
+                                Name</label>
+                            <input type="text" id="name" required placeholder="Enter your name"
+                                style="width: 100%; padding: var(--space-md); border: 1px solid #ddd; border-radius: var(--radius-md); font-size: var(--font-size-base);">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" required
-                                placeholder="Enter your mobile number">
+                        <div style="margin-bottom: var(--space-lg);">
+                            <label style="display: block; margin-bottom: var(--space-sm); font-weight: 500;">Phone
+                                Number</label>
+                            <input type="tel" id="phone" required placeholder="Enter your mobile number"
+                                style="width: 100%; padding: var(--space-md); border: 1px solid #ddd; border-radius: var(--radius-md); font-size: var(--font-size-base);">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required placeholder="Enter your email">
+                        <div style="margin-bottom: var(--space-lg);">
+                            <label style="display: block; margin-bottom: var(--space-sm); font-weight: 500;">Email
+                                Address</label>
+                            <input type="email" id="email" required placeholder="Enter your email"
+                                style="width: 100%; padding: var(--space-md); border: 1px solid #ddd; border-radius: var(--radius-md); font-size: var(--font-size-base);">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="requirement">Your Requirement</label>
-                            <textarea id="requirement" class="form-control" rows="5" required
-                                placeholder="Tell us what you are looking for (e.g., 4 CCTV Cameras for shop)"></textarea>
+                        <div style="margin-bottom: var(--space-lg);">
+                            <label style="display: block; margin-bottom: var(--space-sm); font-weight: 500;">Your
+                                Requirement</label>
+                            <textarea id="requirement" rows="4" required placeholder="e.g., 4 CCTV cameras for my shop"
+                                style="width: 100%; padding: var(--space-md); border: 1px solid #ddd; border-radius: var(--radius-md); font-size: var(--font-size-base); resize: vertical;"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send via WhatsApp</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer id="footer" class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="Elite Solution Logo">
-                    </a>
-                    <p>Elite Solution is your trusted partner for CCTV cameras, security solutions, electronics, and
-                        more.</p>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html#products">CCTV Cameras</a></li>
-                        <li><a href="index.html#products">DVR Systems</a></li>
-                        <li><a href="index.html#products">NVR Systems</a></li>
-                        <li><a href="index.html#products">Smart TVs</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns & Exchange</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <h4 class="footer-title">Contact Us</h4>
-                        <ul class="footer-links">
-                            <li>
-                                <a href="tel:+919548323302" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path
-                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.49-5.41-4.07-6.9-6.9l1.97-1.57c.26-.26.35-.63.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-                                    </svg>
-                                    Call: +91 95483 23302
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/919548323302" target="_blank"
-                                    style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path
-                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                                    </svg>
-                                    WhatsApp
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:elitesolutions906@gmail.com"
-                                    style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path
-                                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                                    </svg>
-                                    Email Us
-                                </a>
-                            </li>
-                        </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-title">Stay Connected</h4>
-                    <p>Subscribe to our newsletter for exclusive deals and updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-primary"
-                            style="margin-top: 0.5rem; width: 100%;">Subscribe</button>
-                    </form>
-                    <div class="social-links" style="margin-top: 1rem;">
-                        <a href="#" class="social-link" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg"
-                                width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg></a>
-                    </div>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Elite Solution. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    <div class="floating-buttons floating-whatsapp">
+        <a href="https://wa.me/919548323302" class="float-btn whatsapp" target="_blank"><span>WhatsApp</span></a>
+    </div>
     <script src="script.js"></script>
 </body>
 
